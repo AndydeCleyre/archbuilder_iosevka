@@ -1,0 +1,67 @@
+name: Build, upload, and publish Arch Linux package
+on:
+  push:
+    tags:
+      - 'r[0-9]*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: prepare build ctnr
+        run: |
+          buildah from --name ctnr archlinux
+
+          buildah run ctnr pacman --noconfirm -Syu
+          buildah run ctnr pacman --noconfirm -S --needed base-devel git
+
+          buildah run ctnr useradd -m dev
+          buildah run ctnr sh -c 'printf "%s\n" "dev ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers.d/dev'
+          buildah config -u dev ctnr
+
+          buildah copy --chown dev ctnr ttf-iosevka-term-custom-git /home/dev/ttf-iosevka-term-custom-git
+
+      - name: build and install AUR deps
+        run: |
+          buildah run ctnr gpg --keyserver keys.gnupg.net --recv-keys 58E0C111E39F5408C5D3EC76C1A60EACE707FDA5
+          buildah run ctnr git clone https://aur.archlinux.org/ttfautohint /home/dev/ttfautohint
+          buildah config --workingdir /home/dev/ttfautohint ctnr
+          buildah run ctnr makepkg --noconfirm -si
+
+      - name: build pkg
+        run: |
+          buildah config --workingdir /home/dev/ttf-iosevka-term-custom-git ctnr
+          buildah run ctnr makepkg --noconfirm -s
+
+          buildah run ctnr ls -l
+
+          pkg="$(buildah run ctnr sh -c "printf '%s\n' ttf-iosevka-term-custom-git-*.pkg.*")"
+          buildah run ctnr cat "$pkg" >"$pkg"
+
+          echo "PKG=$pkg" >>$GITHUB_ENV
+
+      - name: create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: upload pkg as release asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.PKG }}
+          asset_name: ${{ env.PKG }}
+          asset_content_type: application/zip
