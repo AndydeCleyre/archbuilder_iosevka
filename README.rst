@@ -9,7 +9,7 @@ The built package can be installed on Arch Linux with ``sudo pacman -U``,
 or you can simply extract the fonts with your favorite archive tool for use on
 any system.
 
-If you want to use it to have GitHub build your custom configuration:
+If you want to have GitHub build your custom configuration:
 
 #. Fork this repo on GitHub
 #. Clone your fork, with submodules, and enter the repo folder
