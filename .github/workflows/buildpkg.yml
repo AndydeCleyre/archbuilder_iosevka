@@ -25,6 +25,7 @@ jobs:
 
           buildah copy --chown dev ctnr ttf-iosevka-term-custom-git /home/dev/ttf-iosevka-term-custom-git
           buildah run ctnr mkdir -p /home/dev/.config/iosevka
+          buildah copy --chown dev ctnr private-build-plans.toml /home/dev/.config/iosevka/ 2>/dev/null || printf '%s\n' "Using example Iosevka build plans"
 
       - name: build and install AUR deps
         run: |
@@ -36,7 +37,6 @@ jobs:
       - name: build pkg
         run: |
           buildah config --workingdir /home/dev/ttf-iosevka-term-custom-git ctnr
-          buildah copy --chown dev ctnr private-build-plans.toml /home/dev/.config/iosevka/ 2>/dev/null
           buildah run ctnr makepkg --noconfirm -s
 
           buildah run ctnr ls -l
