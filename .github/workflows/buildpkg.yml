@@ -12,31 +12,38 @@ jobs:
         with:
           submodules: true
 
-      - name: prepare build ctnr
+      - name: create and update build ctnr from official repos
         run: |
           buildah from --name ctnr archlinux
-
           buildah run ctnr pacman --noconfirm -Syu
           buildah run ctnr pacman --noconfirm -S --needed base-devel git
 
+      - name: add non-root user to build ctnr
+        run: |
           buildah run ctnr useradd -m dev
           buildah run ctnr sh -c 'printf "%s\n" "dev ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers.d/dev'
-          buildah config -u dev ctnr
 
+      - name: copy PKGBUILD from AUR repo into build ctnr
+        run: |
           buildah copy --chown dev ctnr ttf-iosevka-term-custom-git /home/dev/ttf-iosevka-term-custom-git
+
+      - name: copy custom private-build-plans.toml if present into build ctnr
+        run: |
+          buildah config -u dev ctnr
           buildah run ctnr mkdir -p /home/dev/.config/iosevka
           buildah copy --chown dev ctnr private-build-plans.toml /home/dev/.config/iosevka/ 2>/dev/null || printf '%s\n' "Using example Iosevka build plans"
 
-      - name: build and install AUR deps
+      - name: build and install AUR dep ttfautohint
         run: |
+          buildah config -u dev ctnr
           buildah run ctnr gpg --keyserver keys.gnupg.net --recv-keys 58E0C111E39F5408C5D3EC76C1A60EACE707FDA5
           buildah run ctnr git clone https://aur.archlinux.org/ttfautohint /home/dev/ttfautohint
           buildah config --workingdir /home/dev/ttfautohint ctnr
           buildah run ctnr makepkg --noconfirm -si
 
-      - name: build pkg
+      - name: build and siphon pkg from build ctnr, setting PKG to artifact filename
         run: |
-          buildah config --workingdir /home/dev/ttf-iosevka-term-custom-git ctnr
+          buildah config -u dev --workingdir /home/dev/ttf-iosevka-term-custom-git ctnr
           buildah run ctnr makepkg --noconfirm -s
 
           buildah run ctnr ls -l
@@ -44,7 +51,7 @@ jobs:
           pkg="$(buildah run ctnr sh -c "printf '%s\n' ttf-iosevka-term-custom-git-*.pkg.*")"
           buildah run ctnr cat "$pkg" >"$pkg"
 
-          echo "PKG=$pkg" >>$GITHUB_ENV
+          printf '%s\n' "PKG=$pkg" >>$GITHUB_ENV
 
       - name: create release
         id: create_release
