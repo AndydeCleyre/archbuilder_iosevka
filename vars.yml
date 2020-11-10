@@ -1,0 +1,69 @@
+build:
+  # - ttf-iosevka-git
+  # - ttf-iosevka-custom-git
+  - ttf-iosevka-term-custom-git
+  # - ttf-iosevka-force-monospace-custom-git
+  # - ttf-iosevka-fixed-custom-git
+spacings:
+  - ''  # wide glyphs more often
+  - term  # mono more often
+  - force-monospace  # term with no wide glyphs
+  - fixed  # force-monospace with no ligatures
+charvars:
+  turn-v: curly
+  capital-b: more-asymmetric
+  capital-d: more-rounded
+  capital-g: toothless
+  capital-j: serifless
+  capital-k: curly
+  capital-m: hanging
+  capital-q: crossing
+  capital-r: curly
+  capital-y: curly
+  a: doublestorey-tailed
+  b: toothless-corner
+  d: tailed
+  f: tailed
+  g: opendoublestorey
+  h: straight
+  i: hooky
+  j: straight
+  k: curly
+  l: tailed
+  m: shortleg
+  n: earless-corner-tailed
+  p: eared
+  q: earless-corner-tailed
+  r: earless-corner
+  t: standard
+  u: toothless-rounded
+  v: curly
+  w: curly
+  x: curly
+  y: curly
+  z: with-crossbar
+  eszet: longs-s-lig
+  lambda: curly
+  zero: reverse-slashed
+  one: nobase
+  three: flattop
+  four: semi-open
+  six: open-contour
+  seven: noserif
+  nine: straight-bar
+  tilde: low
+  asterisk: hexhigh
+  underscore: high
+  paragraph-sign: low
+  caret: high
+  paren: normal
+  brace: curly
+  number-sign: upright
+  ampersand: flat-top
+  at: short
+  dollar: opencap
+  percent: rings
+  bar: v-bar-natural-slope
+  lig-ltgteq: flat
+  ascii-single-quote: raised-comma
+  ascii-grave: straight

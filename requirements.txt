@@ -1,0 +1,4 @@
+ruamel.yaml.clib==0.2.2   # via ruamel.yaml
+ruamel.yaml==0.16.12      # via yamlpath
+wheezy.template==3.0.1    # via -r requirements.in
+yamlpath==3.3.0           # via -r requirements.in

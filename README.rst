@@ -1,46 +1,73 @@
-Personal Builder for the Iosevka Term Font
-==========================================
+Personal Builder for the Iosevka Font
+=====================================
 
-This repo has a GitHub Workflow which can build the
-ttf-iosevka-term-custom-git_ package from the AUR, for the incredible
-Iosevka_ font.
+This repo has a GitHub Workflow which can build Arch Linux
+packages for the incredible Iosevka_ font.
 
 The built package can be installed on Arch Linux with ``sudo pacman -U``,
 or you can simply extract the fonts with your favorite archive tool for use on
 any system.
 
+.. content::
+   :depth: 1
+
+How to Use
+----------
+
 If you want to have GitHub build your custom configuration:
 
 #. Fork this repo on GitHub
-#. Clone your fork, with submodules, and enter the repo folder
-#. Copy the example configuration to the repo root as ``private-build-plans.toml``
-#. Edit that to your liking, and commit it
-#. Tag the commit with any name starting with ``r<number>``, and push the tag
+#. Clone your fork locally
+#. Edit ``vars.yml`` to your liking
+#. Activate a Python virtual environment to match ``requirements.txt``
+#. Regenerate ``buildpkg.yml``
+#. Commit the changes
+#. Create and push a tag starting with ``r<number>``
 
 .. code:: console
 
-  $ git clone --recursive <your-github-fork>
-  $ cd archbuilder_ttf-iosevka-term-custom-git
-  $ cp ttf-iosevka-term-custom-git/private-build-plans.toml.example private-build-plans.toml
-  $ $EDITOR private-build-plans.toml
-  $ git add private-build-plans.toml
-  $ git commit private-build-plans.toml -m "much better now"
+  $ git clone <your-github-fork>
+  $ cd archbuilder_iosevka
+  $ $EDITOR vars.yml
+  $ # activate a new virtual environment (see next section)
+  $ ./mk/buildpkg.yml.sh
+  $ git commit vars.yml .github/workflows/buildpkg.yml -m "much better now"
   $ git tag r123-awesome-build-label
   $ git push --tags
 
 You can watch the build process in your ``Actions`` tab, and after ~30 minutes
 find the built font in your ``Releases``.
 
-The AUR PKGBUILD is included here as a git submodule,
-so if you want to fetch an update for that:
+Python Virtual Environment
+--------------------------
+
+We use a small Python environment to render the Workflow (``buildpkg.yml``)
+from an included template, using the data in ``vars.yml``.
+
+You can create and activate a virtual environment in your favorite way,
+as long as it has the packages listed in ``requirements.txt``.
+
+Two possible methods are described below.
+
+Using Python's ``venv`` Directly
+++++++++++++++++++++++++++++++++
 
 .. code:: console
 
-  $ cd ttf-iosevka-term-custom-git
-  $ git checkout master
-  $ git pull
-  $ cd ..
-  $ git commit ttf-iosevka-term-custom-git -m "pull newer pkg submodule"
+  $ python3 -m venv venv
+  $ . ./venv/bin/activate
+  $ python -m pip install -r requirements.txt
+
+Using zpy
++++++++++
+
+zpy_ is a set of helpers for managing Python venvs and packages, with Zsh and pip-tools_.
+
+.. code:: console
+
+  % envin
 
 .. _ttf-iosevka-term-custom-git: https://aur.archlinux.org/packages/ttf-iosevka-term-custom-git
 .. _Iosevka: https://github.com/be5invis/Iosevka/
+.. _zpy: https://github.com/andydecleyre/zpy
+.. _pip-tools: https://github.com/jazzband/pip-tools
