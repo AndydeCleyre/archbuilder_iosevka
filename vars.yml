@@ -63,7 +63,7 @@ charvars:
   at: short
   dollar: opencap
   percent: rings
-  bar: v-bar-natural-slope
+  bar: natural-slope
   lig-ltgteq: flat
   ascii-single-quote: raised-comma
   ascii-grave: straight
