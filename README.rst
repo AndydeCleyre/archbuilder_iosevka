@@ -8,7 +8,7 @@ The built package can be installed on Arch Linux with ``sudo pacman -U``,
 or you can simply extract the fonts with your favorite archive tool for use on
 any system.
 
-.. content::
+.. contents::
    :depth: 1
 
 How to Use
