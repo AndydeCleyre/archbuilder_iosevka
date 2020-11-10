@@ -1,7 +1,7 @@
 Personal Builder for the Iosevka Font
 =====================================
 
-|build status|
+|build-status|
 
 This repo has a GitHub Workflow which can build Arch Linux
 packages for the incredible Iosevka_ font.
@@ -74,6 +74,6 @@ zpy_ is a set of helpers for managing Python venvs and packages, with Zsh and pi
 .. _zpy: https://github.com/andydecleyre/zpy
 .. _pip-tools: https://github.com/jazzband/pip-tools
 
-.. |build status| image:: https://github.com/AndydeCleyre/archbuilder_iosevka/workflows/Build%20and%20upload%20Arch%20Linux%20packages/badge.svg
+.. |build-status| image:: https://github.com/AndydeCleyre/archbuilder_iosevka/workflows/Build%20and%20upload%20Arch%20Linux%20packages/badge.svg
    .. :alt: Build Status
    .. :target: https://github.com/AndydeCleyre/archbuilder_iosevka/actions
