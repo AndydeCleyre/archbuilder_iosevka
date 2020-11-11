@@ -16,25 +16,18 @@ any system.
 How to Use
 ----------
 
-If you want to have GitHub build your custom configuration:
-
-#. Fork this repo on GitHub
-#. Clone your fork locally
-#. Edit ``vars.yml`` to your liking
-#. Activate a Python virtual environment to match ``requirements.txt``
-#. Regenerate ``buildpkg.yml``
-#. Commit the changes
-#. Create and push a tag starting with ``r<number>``
+If you want to have GitHub build your custom configuration,
+fork this repo on GitHub, then:
 
 .. code:: console
 
   $ git clone <your-github-fork>
   $ cd archbuilder_iosevka
   $ $EDITOR vars.yml
-  $ # activate a new virtual environment (see next section)
+  $ # activate a Python environment matching requirements.txt (see next section)
   $ ./mk/buildpkg.yml.sh
   $ git commit vars.yml .github/workflows/buildpkg.yml -m "much better now"
-  $ git tag r123-awesome-build-label
+  $ git tag r123-awesome-build-label  # Start tag name with 'r<number>'
   $ git push --tags
 
 You can watch the build process in your ``Actions`` tab, and after ~30 minutes
