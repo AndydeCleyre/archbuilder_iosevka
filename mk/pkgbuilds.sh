@@ -5,7 +5,7 @@ gitroot="$(git rev-parse --show-toplevel)"
 "${gitroot}"/mk/private-build-plans.toml.sh
 pbp_sha256="$(sha256sum "${gitroot}"/private-build-plans.toml | cut -d' ' -f 1)"
 
-yaml-get -p 'spacings[. =~ //]' "${gitroot}"/vars.yml | while read spacing; do
+yaml-get -p 'spacings.*' "${gitroot}"/vars.yml | while read spacing; do
 
   folder="${gitroot}/pkgs/ttf-iosevka-${spacing}${spacing:+-}custom-git"
 
