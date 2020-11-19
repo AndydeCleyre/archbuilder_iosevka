@@ -10,10 +10,12 @@ spacings:
   - force-monospace  # term with no wide glyphs
   - fixed  # force-monospace with no ligatures
 charvars:
+  digit-form: lining
   turn-v: curly
   capital-b: more-asymmetric
   capital-d: more-rounded
   capital-g: toothless
+  capital-i: serifless
   capital-j: serifless
   capital-k: curly
   capital-m: hanging
@@ -23,13 +25,13 @@ charvars:
   a: doublestorey-tailed
   b: toothless-corner
   d: tailed
-  f: tailed
+  f: flat-hook-tailed
   g: opendoublestorey
   h: straight
   i: hooky
-  j: straight
+  j: serifless
   k: curly
-  l: tailed
+  l: flat-tailed
   m: shortleg
   n: earless-corner-tailed
   p: eared
