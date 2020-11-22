@@ -2,13 +2,13 @@ build:
   # - ttf-iosevka-git
   # - ttf-iosevka-custom-git
   - ttf-iosevka-term-custom-git
-  # - ttf-iosevka-force-monospace-custom-git
+  # - ttf-iosevka-fontconfig-mono-custom-git
   # - ttf-iosevka-fixed-custom-git
 spacings:
-  - ''  # wide glyphs more often
-  - term  # mono more often
-  - force-monospace  # term with no wide glyphs
-  - fixed  # force-monospace with no ligatures
+  - ''  # some wide glyphs
+  - term  # fewer wide glyphs
+  - fontconfig-mono  # no wide glyphs
+  - fixed  # neither wide glyphs nor ligatures
 charvars:
   digit-form: lining
   turn-v: curly

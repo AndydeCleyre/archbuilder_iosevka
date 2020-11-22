@@ -48,9 +48,11 @@ fork this repo on GitHub, then:
 
 - tag your changes as a release (start tag with 'r<number>'), and push
 
-  $ git commit vars.yml .github/workflows/buildpkg.yml -m "much better now"
-  $ git tag r123-awesome-build-label
-  $ git push --tags
+.. code:: console
+
+   $ git commit vars.yml .github/workflows/buildpkg.yml -m "much better now"
+   $ git tag r123-awesome-build-label
+   $ git push --tags
 
 You can watch the build process in your ``Actions`` tab, and after ~30 minutes
 find the built font in your ``Releases``.
@@ -91,7 +93,7 @@ adding links to the relevant scripts (``wheezy.template``, ``yaml-get``) to your
 
 .. code:: console
 
-   $ pipz install --cmd wheezy.template,yaml-get wheezy.template yamlpath
+   % pipz install --cmd wheezy.template,yaml-get wheezy.template yamlpath
 
 pipenv
 ++++++
