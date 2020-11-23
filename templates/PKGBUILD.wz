@@ -17,7 +17,7 @@ provides=(${_pkgname})
 replaces=('ttf-iosevka-termlig-custom-git')
 @end
 source=(
-  'git+https://github.com/be5invis/Iosevka'
+  'git+https://github.com/be5invis/Iosevka#branch=dev'
   'private-build-plans.toml.example'
 )
 sha256sums=(
