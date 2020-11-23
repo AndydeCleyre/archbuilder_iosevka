@@ -43,7 +43,7 @@ charvars:
   w: curly
   x: curly
   y: curly
-  z: curly-with-crossbar
+  z: with-crossbar
   eszet: longs-s-lig
   lambda: curly
   zero: reverse-slashed
