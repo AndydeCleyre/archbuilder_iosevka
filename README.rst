@@ -121,7 +121,14 @@ To use a configuration thus generated with this builder:
 
 - in the customizer, leave the default Family Name ("Iosevka Custom")
 - save the generated configuration as ``templates/private-build-plans.toml.wz``
-- in ``vars.yml``'s ``build`` list, ensure the only uncommented item is ``ttf-iosevka-custom-git``:
+- in ``vars.yml``'s ``build`` list, ensure the only uncommented item is ``ttf-iosevka-custom-git``,
+  with either an editor:
+
+  .. code:: console
+
+     $ $EDITOR vars.yml
+
+  or yamlpath's ``yaml-merge``:
 
   .. code:: console
 
