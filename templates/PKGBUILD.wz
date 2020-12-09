@@ -1,4 +1,4 @@
-@require(spacing, pbp_sha256)
+@require(spacing, pbp_sha256, build_webfonts)
 # Maintainer: Andy Kluger <https://t.me/andykluger>
 # Contributor: Markus Weimar <mail@@markusweimar.de>
 _pkgname=ttf-iosevka-@{spacing and spacing + '-' or ''}custom
@@ -44,12 +44,25 @@ build() {
   cd Iosevka
   npm install
   npm update
-  npm run build -- ttf::${_pkgname#*-}
+  npm run build -- @{build_webfonts and 'contents' or 'ttf'}::${_pkgname#*-}
 }
 
 package() {
   install -d "${pkgdir}/usr/share/fonts/TTF"
   install -m644 Iosevka/dist/*/ttf/*.ttf "${pkgdir}/usr/share/fonts/TTF/"
+@if build_webfonts:
+  install -d "${pkgdir}/usr/share/fonts/WOFF2"
+  install -m644 Iosevka/dist/*/woff2/*.woff2 "${pkgdir}/usr/share/fonts/WOFF2/"
+  # where's the css stuff?
+  printf '%s\n' "IN THE DIST FOLDER, TOP LEVEL:"
+  ls Iosevka/dist/
+  printf '%s\n' "IN THE DIST FOLDER, SECOND LEVEL:"
+  ls Iosevka/dist/*/
+  printf '%s\n' "IN THE DIST FOLDER, THIRD LEVEL:"
+  ls Iosevka/dist/*/*/
+  # install -d "${pkgdir}/usr/share/fonts/WOFF2"
+  # install -m644 Iosevka/dist/*/woff2/*.woff2 "${pkgdir}/usr/share/fonts/WOFF2/"
+@end
   install -d "${pkgdir}/usr/share/licenses/${pkgname}"
   install -m644 Iosevka/LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
