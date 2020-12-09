@@ -53,15 +53,9 @@ package() {
 @if build_webfonts:
   install -d "${pkgdir}/usr/share/fonts/WOFF2"
   install -m644 Iosevka/dist/*/woff2/*.woff2 "${pkgdir}/usr/share/fonts/WOFF2/"
-  # where's the css stuff?
-  printf '%s\n' "IN THE DIST FOLDER, TOP LEVEL:"
-  ls Iosevka/dist/
-  printf '%s\n' "IN THE DIST FOLDER, SECOND LEVEL:"
-  ls Iosevka/dist/*/
-  printf '%s\n' "IN THE DIST FOLDER, THIRD LEVEL:"
-  ls Iosevka/dist/*/*/
-  # install -d "${pkgdir}/usr/share/fonts/WOFF2"
-  # install -m644 Iosevka/dist/*/woff2/*.woff2 "${pkgdir}/usr/share/fonts/WOFF2/"
+  printf '%s\n' 'CSS BELOW:'
+  cat Iosevka/dist/*/*.css
+  printf '%s\n' 'CSS ABOVE'
 @end
   install -d "${pkgdir}/usr/share/licenses/${pkgname}"
   install -m644 Iosevka/LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/"
