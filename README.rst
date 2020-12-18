@@ -19,40 +19,42 @@ How to Use
 If you want to have GitHub build your custom configuration,
 fork this repo on GitHub, then:
 
-- get a local copy
+- get a local copy:
 
-.. code:: console
+  .. code:: console
 
-   $ git clone <your-github-fork>
-   $ cd archbuilder_iosevka
+     $ git clone <your-github-fork>
+     $ cd archbuilder_iosevka
 
-- configure your font
+- activate a `Python Virtual Environment`_ matching ``requirements.txt``:
 
-.. code:: console
+  .. code:: console
 
-   $ $EDITOR vars.yml
+     $ python3 -m venv venv
+     $ . ./venv/bin/activate
+     $ python -m pip install -r requirements.txt
 
-- activate a `Python Virtual Environment`_ matching ``requirements.txt``, e.g.:
+- configure your font, either by editing ``vars.yml``:
 
-.. code:: console
+  .. code:: console
 
-   $ python3 -m venv venv
-   $ . ./venv/bin/activate
-   $ python -m pip install -r requirements.txt
+     $ $EDITOR vars.yml
 
-- generate your new workflow
+  or by `Using the Customizer Site`_.
 
-.. code:: console
+- generate your new workflow:
 
-   $ ./mk/buildpkg.yml.sh
+  .. code:: console
 
-- tag your changes as a release (start tag with 'r<number>'), and push
+     $ ./mk/buildpkg.yml.sh
 
-.. code:: console
+- tag your changes as a release (start tag with 'r<number>'), and push:
 
-   $ git commit vars.yml .github/workflows/buildpkg.yml -m "much better now"
-   $ git tag r123-awesome-build-label
-   $ git push --tags
+  .. code:: console
+
+     $ git commit -am "much better now"
+     $ git tag r123-awesome-build-label
+     $ git push --tags
 
 You can watch the build process in your ``Actions`` tab, and after ~30 minutes
 find the built font in your ``Releases``.
@@ -110,9 +112,31 @@ pipx
 
    $ pipx install wheezy.template yamlpath
 
+Using the Customizer Site
+-------------------------
 
-.. _ttf-iosevka-term-custom-git: https://aur.archlinux.org/packages/ttf-iosevka-term-custom-git
+There is now `an official web app`_ for configuring a build visually.
+
+To use a configuration thus generated with this builder:
+
+- in the customizer, leave the default Family Name ("Iosevka Custom")
+- save the generated configuration as ``templates/private-build-plans.toml.wz``
+- in ``vars.yml``'s ``build`` list, ensure the only uncommented item is ``ttf-iosevka-custom-git``,
+  with either an editor:
+
+  .. code:: console
+
+     $ $EDITOR vars.yml
+
+  or yamlpath's ``yaml-merge``:
+
+  .. code:: console
+
+     $ yaml-merge -A right -w vars.yml vars.yml <<<'{"build": ["ttf-iosevka-custom-git"]}'
+
+
 .. _Iosevka: https://github.com/be5invis/Iosevka/
+.. _an official web app: https://typeof.net/Iosevka/customizer
 .. _zpy: https://github.com/andydecleyre/zpy
 .. _pip-tools: https://github.com/jazzband/pip-tools
 

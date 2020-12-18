@@ -9,6 +9,7 @@ spacings:
   - term  # fewer wide glyphs
   - fontconfig-mono  # no wide glyphs
   - fixed  # neither wide glyphs nor ligatures
+build_webfonts: no
 charvars:
   digit-form: lining
   turn-v: curly
@@ -25,6 +26,7 @@ charvars:
   a: doublestorey-tailed
   b: toothless-corner
   d: tailed
+  e: rounded
   f: flat-hook-tailed
   g: opendoublestorey
   h: straight
