@@ -19,10 +19,12 @@ charvars:
   capital-i: short-serifed
   capital-j: serifless
   capital-k: curly
+  capital-l: standard
   capital-m: hanging
   capital-q: crossing
   capital-r: curly
   capital-y: curly
+  capital-z: with-crossbar
   a: doublestorey-tailed
   b: toothless-corner
   d: tailed
@@ -50,10 +52,12 @@ charvars:
   lambda: curly
   zero: reverse-slashed
   one: nobase
+  two: curly-neck
   three: flattop
   four: semi-open
   six: open-contour
   seven: noserif
+  eight: crossing
   nine: straight-bar
   tilde: low
   asterisk: hexhigh
