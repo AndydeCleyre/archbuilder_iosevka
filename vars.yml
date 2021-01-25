@@ -12,35 +12,47 @@ spacings:
 build_webfonts: no
 charvars:
   digit-form: lining
-  turn-v: curly
+  capital-a: curly
   capital-b: more-asymmetric
-  capital-d: more-rounded
-  capital-g: toothless-corner
+  capital-d: more-rounded-unilateral-motion-serifed
+  capital-e: standard
+  capital-f: motion-serifed
+  capital-g: toothless-corner-hooked
+  capital-h: standard
   capital-i: short-serifed
   capital-j: serifless
-  capital-k: curly
+  capital-k: curly-motion-serifed
   capital-l: standard
-  capital-m: hanging
+  capital-m: hanging-motion-serifed
+  capital-n: standard
+  capital-p: closed-motion-serifed
   capital-q: crossing
-  capital-r: curly
+  capital-r: curly-motion-serifed
+  capital-s: serifless
+  capital-t: standard
+  capital-u: toothless-rounded
+  capital-v: curly
+  capital-w: curly
+  capital-x: curly
   capital-y: curly
   capital-z: with-crossbar
-  a: doublestorey-tailed
+  a: double-storey-tailed
   b: toothless-corner
   d: tailed
   e: rounded
   f: flat-hook-tailed
-  g: opendoublestorey
+  g: double-storey-open
   h: straight
   i: hooky
   j: serifless
   k: curly
   l: flat-tailed
-  m: shortleg
+  m: short-leg
   n: earless-corner-tailed
-  p: eared
-  q: earless-corner-tailed
+  p: motion-serifed
+  q: earless-corner-diagonal-tailed
   r: earless-corner
+  s: serifless
   t: standard
   u: toothless-rounded
   v: curly
@@ -49,12 +61,15 @@ charvars:
   y: curly
   z: with-crossbar
   eszet: longs-s-lig
+  turn-v: curly
   lambda: curly
+  cyrl-capital-u: curly-turn
   zero: reverse-slashed
   one: nobase
   two: curly-neck
   three: flattop
   four: semi-open
+  five: oblique-upper-left-bar
   six: open-contour
   seven: noserif
   eight: crossing
@@ -75,3 +90,4 @@ charvars:
   lig-ltgteq: flat
   ascii-single-quote: raised-comma
   ascii-grave: straight
+  question: smooth
