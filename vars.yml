@@ -92,7 +92,7 @@ charvars:
   number-sign: upright
   ampersand: flat-top
   at: short
-  dollar: interrupted-cap
+  dollar: open-cap
   cent: open
   percent: rings-segmented-slash
   bar: natural-slope
