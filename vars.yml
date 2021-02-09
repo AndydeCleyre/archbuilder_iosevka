@@ -13,11 +13,12 @@ build_webfonts: no
 charvars:
   digit-form: lining
   capital-a: curly
-  capital-b: more-asymmetric
+  capital-b: standard-interrupted-bilateral-motion-serifed
+  capital-c: serifless
   capital-d: more-rounded-unilateral-motion-serifed
   capital-e: standard
   capital-f: motion-serifed
-  capital-g: toothless-corner-hooked
+  capital-g: toothless-corner-serifless-hooked
   capital-h: standard
   capital-i: short-serifed
   capital-j: serifless
@@ -38,6 +39,7 @@ charvars:
   capital-z: with-crossbar
   a: double-storey-tailed
   b: toothless-corner
+  c: serifless
   d: tailed
   e: rounded
   f: flat-hook-tailed
@@ -62,7 +64,13 @@ charvars:
   z: with-crossbar
   eszet: longs-s-lig
   turn-v: curly
-  lambda: curly
+  lower-alpha: crossing
+  capital-gamma: standard
+  latn-epsilon: serifed
+  latn-reverse-epsilon: serifed
+  lower-iota: serifed-flat-tailed
+  lower-lambda: curly
+  cyrl-ka: curly
   cyrl-capital-u: curly-turn
   zero: reverse-slashed
   one: nobase
@@ -71,11 +79,11 @@ charvars:
   four: semi-open
   five: oblique-upper-left-bar
   six: open-contour
-  seven: noserif
+  seven: curly-serifless
   eight: crossing
   nine: straight-bar
   tilde: low
-  asterisk: hexhigh
+  asterisk: hex-high
   underscore: high
   paragraph-sign: low
   caret: high
@@ -84,8 +92,9 @@ charvars:
   number-sign: upright
   ampersand: flat-top
   at: short
-  dollar: opencap
-  percent: rings
+  dollar: interrupted-cap
+  cent: open
+  percent: rings-segmented-slash
   bar: natural-slope
   lig-ltgteq: flat
   ascii-single-quote: raised-comma
