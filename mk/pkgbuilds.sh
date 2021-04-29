@@ -1,5 +1,5 @@
 #!/bin/sh -e
-cd "$(dirname "$0")"
+
 gitroot="$(git rev-parse --show-toplevel)"
 
 "${gitroot}"/mk/private-build-plans.toml.sh
@@ -24,6 +24,12 @@ yaml-get -p 'spacings.*' "${gitroot}"/vars.yml | while read -r spacing; do
     "pbp_sha256":    "'"$pbp_sha256"'",
     "build_webfonts": '"$build_webfonts"'
   }' >"${folder}"/PKGBUILD
+
+  if command -v makepkg >/dev/null; then
+    cd "${folder}"
+    makepkg --nobuild
+    makepkg --printsrcinfo >.SRCINFO
+  fi
 
   printf '%s\n' \
     '/*.pkg.*' '/src' '/pkg' '/Iosevka' \

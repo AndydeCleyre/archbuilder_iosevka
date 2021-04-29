@@ -2,7 +2,7 @@ name: Build and upload Arch Linux packages
 on:
   push:
     tags:
-      - 'r[0-9]*'
+      - '**'
 jobs:
   build:
     runs-on: ubuntu-latest

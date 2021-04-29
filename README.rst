@@ -48,12 +48,12 @@ fork this repo on GitHub, then:
 
      $ ./mk/buildpkg.yml.sh
 
-- tag your changes as a release (start tag with 'r<number>'), and push:
+- commit, tag, and push:
 
   .. code:: console
 
      $ git commit -am "much better now"
-     $ git tag r123-awesome-build-label
+     $ git tag awesome-build-label
      $ git push --tags
 
 You can watch the build process in your ``Actions`` tab, and after ~30 minutes
