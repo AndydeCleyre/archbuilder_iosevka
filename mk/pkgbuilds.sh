@@ -27,7 +27,7 @@ yaml-get -p 'spacings.*' "${gitroot}"/vars.yml | while read -r spacing; do
 
   if command -v makepkg >/dev/null; then
     cd "${folder}"
-    makepkg --nobuild
+    makepkg -os
     makepkg --printsrcinfo >.SRCINFO
   fi
 
