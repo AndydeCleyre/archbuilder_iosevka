@@ -12,7 +12,7 @@ spacings:
 build_webfonts: no
 charvars:
   digit-form: lining
-  capital-a: curly
+  capital-a: curly-serifless
   capital-b: standard-interrupted-bilateral-motion-serifed
   capital-c: serifless
   capital-d: more-rounded-unilateral-motion-serifed
