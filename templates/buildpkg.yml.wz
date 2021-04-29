@@ -17,7 +17,7 @@ jobs:
         run: |
           buildah from --name ctnr archlinux
           buildah run ctnr pacman --noconfirm -Syu
-          buildah run ctnr pacman --noconfirm -S --needed base-devel git
+          buildah run ctnr pacman --noconfirm -S --needed base-devel git nodejs-lts-fermium
 
       - name: add non-root user to build ctnr
         run: |
