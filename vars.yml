@@ -34,9 +34,9 @@ charvars:
   capital-u: toothless-rounded
   capital-v: curly
   capital-w: curly
-  capital-x: curly
-  capital-y: curly
-  capital-z: with-crossbar
+  capital-x: curly-serifless
+  capital-y: curly-serifless
+  capital-z: straight-serifless-with-crossbar
   a: double-storey-tailed
   b: toothless-corner
   c: serifless
@@ -59,10 +59,11 @@ charvars:
   u: toothless-rounded
   v: curly
   w: cursive
-  x: curly
+  x: curly-serifless
   y: curly
-  z: with-crossbar
-  eszet: longs-s-lig
+  z: straight-serifless-with-crossbar
+  long-s: standard
+  eszet: longs-s-lig-tailed
   turn-v: curly
   lower-alpha: crossing
   capital-gamma: standard
@@ -80,10 +81,10 @@ charvars:
   five: oblique-upper-left-bar
   six: open-contour
   seven: curly-serifless
-  eight: crossing
+  eight: crossing-asymmetric
   nine: straight-bar
   tilde: low
-  asterisk: hex-high
+  asterisk: turn-hex-high
   underscore: high
   paragraph-sign: low
   caret: high
