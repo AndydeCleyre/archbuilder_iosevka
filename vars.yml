@@ -13,9 +13,9 @@ build_webfonts: no
 charvars:
   digit-form: lining
   capital-a: curly-serifless
-  capital-b: standard-interrupted-bilateral-motion-serifed
+  capital-b: standard-interrupted-bilateral-serifed
   capital-c: serifless
-  capital-d: more-rounded-unilateral-motion-serifed
+  capital-d: more-rounded-unilateral-serifed
   capital-e: standard
   capital-f: motion-serifed
   capital-g: toothless-corner-serifless-hooked
@@ -30,7 +30,7 @@ charvars:
   capital-q: crossing
   capital-r: curly-open
   capital-s: serifless
-  capital-t: standard
+  capital-t: serifless
   capital-u: toothless-rounded
   capital-v: curly
   capital-w: curly
@@ -40,7 +40,7 @@ charvars:
   a: double-storey-tailed
   b: toothless-corner
   c: serifless
-  d: tailed
+  d: tailed-serifless
   e: rounded
   f: flat-hook-tailed
   g: double-storey-open
