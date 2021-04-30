@@ -56,7 +56,7 @@ fork this repo on GitHub, then:
      $ git tag awesome-build-label
      $ git push --tags
 
-You can watch the build process in your ``Actions`` tab, and after ~30 minutes
+You can watch the build process in your ``Actions`` tab, and after ~30-60 minutes
 find the built font in your ``Releases``.
 
 Python Virtual Environment
