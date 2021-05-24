@@ -12,6 +12,8 @@ else
   build_webfonts=false
 fi
 
+upstream_branch="$(yaml-get -p branch "${gitroot}"/vars.yml)"
+
 yaml-get -p 'spacings.*' "${gitroot}"/vars.yml | while read -r spacing; do
 
   folder="${gitroot}/pkgs/ttf-iosevka-${spacing}${spacing:+-}custom-git"
@@ -22,7 +24,8 @@ yaml-get -p 'spacings.*' "${gitroot}"/vars.yml | while read -r spacing; do
   wheezy.template "${gitroot}"/templates/PKGBUILD.wz '{
     "spacing":       "'"$spacing"'",
     "pbp_sha256":    "'"$pbp_sha256"'",
-    "build_webfonts": '"$build_webfonts"'
+    "build_webfonts": '"$build_webfonts"',
+    "branch":        "'"$upstream_branch"'"
   }' >"${folder}"/PKGBUILD
 
   if command -v makepkg >/dev/null; then
