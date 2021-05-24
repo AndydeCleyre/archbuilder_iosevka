@@ -1,4 +1,4 @@
-@require(spacing, pbp_sha256, build_webfonts)
+@require(spacing, pbp_sha256, build_webfonts, branch)
 # Maintainer: Andy Kluger <https://t.me/andykluger>
 # Contributor: Markus Weimar <mail@@markusweimar.de>
 _pkgname=ttf-iosevka-@{spacing and spacing + '-' or ''}custom
@@ -21,7 +21,7 @@ sha256sums=('@pbp_sha256')
 
 prepare () {
   rm -rf Iosevka
-  git clone --depth 1 --branch master 'https://github.com/be5invis/Iosevka'
+  git clone --depth 1 --branch @branch 'https://github.com/be5invis/Iosevka'
 
   buildplans="$HOME/.config/iosevka/private-build-plans.toml"
   if [[ -f "$buildplans" ]]; then

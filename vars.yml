@@ -10,6 +10,7 @@ spacings:
   - fontconfig-mono  # no wide glyphs
   - fixed  # neither wide glyphs nor ligatures
 build_webfonts: no
+branch: dev
 charvars:
   digit-form: lining
   capital-a: curly-serifless
