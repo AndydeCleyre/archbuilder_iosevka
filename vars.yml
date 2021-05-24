@@ -16,14 +16,14 @@ charvars:
   capital-b: standard-interrupted-bilateral-serifed
   capital-c: serifless
   capital-d: more-rounded-unilateral-serifed
-  capital-e: standard
-  capital-f: motion-serifed
+  capital-e: serifless
+  capital-f: top-left-serifed
   capital-g: toothless-corner-serifless-hooked
-  capital-h: standard
+  capital-h: serifless
   capital-i: short-serifed
   capital-j: serifless
-  capital-k: curly-motion-serifed
-  capital-l: standard
+  capital-k: curly-top-left-serifed
+  capital-l: serifless
   capital-m: hanging-motion-serifed
   capital-n: standard
   capital-p: closed-motion-serifed
@@ -47,7 +47,7 @@ charvars:
   h: straight
   i: hooky
   j: serifless
-  k: curly
+  k: curly-serifless
   l: flat-tailed
   m: short-leg
   n: earless-corner-tailed
@@ -66,14 +66,24 @@ charvars:
   eszet: longs-s-lig-tailed
   turn-v: curly
   lower-alpha: crossing
-  capital-gamma: standard
+  capital-gamma: serifless
   latn-epsilon: serifed
   latn-reverse-epsilon: serifed
   lower-iota: serifed-flat-tailed
   lower-lambda: curly
-  cyrl-ka: curly
+  cyrl-capital-ze: unilateral-serifed
+  cyrl-ze: unilateral-serifed
+  cyrl-capital-ka: curly-serifless
+  cyrl-ka: curly-serifless
+  cyrl-el: straight
+  cyrl-en: tailed-top-left-serifed
+  cyrl-ef: cursive
+  cyrl-che: tailed
   cyrl-capital-u: curly-turn
-  zero: reverse-slashed
+  cyrl-ya: straight-tailed
+  cyrl-yeri: round
+  cyrl-yery: round
+  zero: dotted-oval
   one: nobase
   two: curly-neck
   three: flattop
