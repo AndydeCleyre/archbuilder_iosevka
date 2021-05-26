@@ -68,8 +68,6 @@ charvars:
   turn-v: curly
   lower-alpha: crossing
   capital-gamma: serifless
-  latn-epsilon: serifed
-  latn-reverse-epsilon: serifed
   lower-iota: serifed-flat-tailed
   lower-lambda: curly
   cyrl-capital-ze: unilateral-serifed
