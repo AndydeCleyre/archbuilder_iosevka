@@ -14,9 +14,9 @@ jobs:
 
       - name: create and update build ctnr from official repos
         run: |
-          buildah from --name ctnr archlinux
+          buildah from --name ctnr docker.io/library/archlinux:base-devel
           buildah run ctnr pacman --noconfirm -Syu
-          buildah run ctnr pacman --noconfirm -S --needed base-devel git
+          buildah run ctnr pacman --noconfirm -S --needed git
 
       - name: add non-root user to build ctnr
         run: |
