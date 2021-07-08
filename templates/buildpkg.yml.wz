@@ -27,7 +27,7 @@ jobs:
       - name: build and install AUR dep ttfautohint
         run: |
           buildah config -u dev ctnr
-          buildah run ctnr gpg --keyserver keys.gnupg.net --recv-keys 58E0C111E39F5408C5D3EC76C1A60EACE707FDA5
+          buildah run ctnr gpg --keyserver keyserver.ubuntu.com --recv-keys 58E0C111E39F5408C5D3EC76C1A60EACE707FDA5
           buildah run ctnr git clone https://aur.archlinux.org/ttfautohint /home/dev/ttfautohint
           buildah config --workingdir /home/dev/ttfautohint ctnr
           buildah run ctnr makepkg --noconfirm -si
