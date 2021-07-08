@@ -110,3 +110,4 @@ charvars:
   ascii-single-quote: raised-comma
   ascii-grave: straight
   question: smooth
+  punctuation-dot: round
