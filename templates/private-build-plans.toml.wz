@@ -7,12 +7,9 @@ spacing = "@spacing"
 @end
 
 # [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.variants]
-# https://github.com/be5invis/Iosevka/tree/dev-v4#stylistic-sets
 # inherits = "ss14"
 
 [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.variants.design]
-# https://github.com/be5invis/Iosevka/tree/dev-v4#configuring-character-variants
-# https://github.com/be5invis/Iosevka/raw/dev-v4/images/charvars.png
 @for char, style in charvars.items():
 @char = "@style"
 @end
@@ -23,8 +20,6 @@ spacing = "@spacing"
 # [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.variants.oblique]
 
 # [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.ligations]
-# https://github.com/be5invis/Iosevka/tree/dev-v4#configuring-ligations
-# https://github.com/be5invis/Iosevka/tree/dev-v4#ligations
 # inherits = "calt"
 # disables = []
 # enables = []
