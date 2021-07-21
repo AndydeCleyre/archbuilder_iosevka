@@ -56,8 +56,19 @@ fork this repo on GitHub, then:
      $ git tag awesome-build-label
      $ git push --tags
 
-You can watch the build process in your ``Actions`` tab, and after ~30-60 minutes
-find the built font in your ``Releases``.
+You can watch the build process in your ``Actions`` tab,
+or using GitHub's CLI_:
+
+.. code:: console
+
+   $ gh run watch
+
+After anywhere from 30-120 minutes you can
+get the built font from your ``Releases`` page, or:
+
+.. code:: console
+
+   $ gh release download -p '*'
 
 Python Virtual Environment
 --------------------------
@@ -139,6 +150,7 @@ To use a configuration thus generated with this builder:
 .. _an official web app: https://typeof.net/Iosevka/customizer
 .. _zpy: https://github.com/andydecleyre/zpy
 .. _pip-tools: https://github.com/jazzband/pip-tools
+.. _CLI: https://github.com/cli/cli
 
 .. |build status| image:: https://github.com/AndydeCleyre/archbuilder_iosevka/workflows/Build%20and%20upload%20Arch%20Linux%20packages/badge.svg
    :alt: Build Status
