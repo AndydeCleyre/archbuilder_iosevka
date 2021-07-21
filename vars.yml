@@ -67,9 +67,11 @@ charvars:
   eszet: longs-s-lig-tailed
   turn-v: curly
   lower-alpha: crossing
+  lower-delta: rounded
   capital-gamma: serifless
   lower-iota: serifed-flat-tailed
   lower-lambda: curly
+  lower-xi: flat-top
   cyrl-capital-ze: unilateral-serifed
   cyrl-ze: unilateral-serifed
   cyrl-capital-ka: curly-serifless
