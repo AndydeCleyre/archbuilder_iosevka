@@ -41,7 +41,7 @@ build () {
   cd Iosevka
   npm install
   npm update
-  npm run build -- @{build_webfonts and 'contents' or 'ttf'}::${_pkgname#*-}
+  NO_COLOR=1 npm run build -- @{build_webfonts and 'contents' or 'ttf'}::${_pkgname#*-}
 }
 
 package () {
