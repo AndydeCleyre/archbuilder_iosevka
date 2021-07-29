@@ -109,7 +109,7 @@ charvars:
   percent: rings-segmented-slash
   bar: natural-slope
   lig-ltgteq: flat
-  ascii-single-quote: raised-comma
+  ascii-single-quote: straight
   ascii-grave: straight
   question: smooth
   punctuation-dot: round
