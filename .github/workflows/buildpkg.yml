@@ -55,6 +55,8 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/dist"
           buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
 
+          ls -l "${RUNNER_TEMP}/dist/"
+
       - name: copy ttf-iosevka-quasi-proportional-custom-git PKGBUILD into build ctnr
         run: |
           buildah copy --chown dev ctnr pkgs/ttf-iosevka-quasi-proportional-custom-git /home/dev/ttf-iosevka-quasi-proportional-custom-git
@@ -70,7 +72,9 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/dist"
           buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
 
+          ls -l "${RUNNER_TEMP}/dist/"
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ${RUNNER_TEMP}/dist/*
+          files: ${{ env.RUNNER_TEMP }}/dist/*

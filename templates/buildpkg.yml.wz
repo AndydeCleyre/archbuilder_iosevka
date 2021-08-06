@@ -57,8 +57,10 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/dist"
           buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
 
+          ls -l "${RUNNER_TEMP}/dist/"
+
 @end
       - name: Release
         uses: softprops/action-gh-release@@v1
         with:
-          files: ${RUNNER_TEMP}/dist/*
+          files: ${{ env.RUNNER_TEMP }}/dist/*
