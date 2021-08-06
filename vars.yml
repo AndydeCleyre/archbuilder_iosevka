@@ -4,11 +4,13 @@ build:
   - ttf-iosevka-term-custom-git
   # - ttf-iosevka-fontconfig-mono-custom-git
   # - ttf-iosevka-fixed-custom-git
+  - ttf-iosevka-quasi-proportional-custom-git
 spacings:
   - ''  # some wide glyphs
   - term  # fewer wide glyphs
   - fontconfig-mono  # no wide glyphs
   - fixed  # neither wide glyphs nor ligatures
+  - quasi-proportional
 build_webfonts: no
 branch: master
 charvars:
