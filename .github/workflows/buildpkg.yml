@@ -55,10 +55,11 @@ jobs:
           mkdir -p "${RUNNER_TEMP}/dist"
           buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
 
+          printf '%s\n' "${RUNNER_TEMP}/dist/"
           ls -l "${RUNNER_TEMP}/dist/"
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ env.RUNNER_TEMP }}/dist/*
+          files: ${{ runner.temp }}/dist/*
           fail_on_unmatched_files: true
