@@ -51,14 +51,14 @@ jobs:
           buildah config -u dev --workingdir /home/dev/@pkgname ctnr
           buildah run ctnr makepkg --noconfirm -s
 
-          buildah run ctnr ls -l
+          buildah run ctnr ls -lh
 
           pkg="$(buildah run ctnr sh -c "printf '%s\n' *.pkg.*")"
           mkdir -p "${RUNNER_TEMP}/dist"
           buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
 
           printf '%s\n' "${RUNNER_TEMP}/dist/"
-          ls -l "${RUNNER_TEMP}/dist/"
+          ls -lh "${RUNNER_TEMP}/dist/"
 
 @end
       - name: Release
