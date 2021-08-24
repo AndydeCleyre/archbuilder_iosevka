@@ -87,9 +87,9 @@ charvars:
   cyrl-yeri: round
   cyrl-yery: round
   zero: slashed-oval
-  one: nobase
+  one: no-base
   two: curly-neck
-  three: flattop
+  three: flat-top
   four: semi-open
   five: oblique-upper-left-bar
   six: open-contour
