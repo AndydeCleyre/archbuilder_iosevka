@@ -14,7 +14,8 @@ spacings:
 build_webfonts: no
 branch: master
 charvars:
-  digit-form: lining
+  digit-form: old-style
+  apl-form: enable
   capital-a: curly-serifless
   capital-b: standard-interrupted-bilateral-serifed
   capital-c: serifless
@@ -73,6 +74,7 @@ charvars:
   capital-gamma: serifless
   lower-iota: serifed-flat-tailed
   lower-lambda: curly
+  lower-mu: tailed
   lower-xi: flat-top
   cyrl-capital-ze: unilateral-serifed
   cyrl-ze: unilateral-serifed
