@@ -4,15 +4,18 @@ build:
   - ttf-iosevka-term-custom-git
   # - ttf-iosevka-fontconfig-mono-custom-git
   # - ttf-iosevka-fixed-custom-git
+  - ttf-iosevka-quasi-proportional-custom-git
 spacings:
   - ''  # some wide glyphs
   - term  # fewer wide glyphs
   - fontconfig-mono  # no wide glyphs
   - fixed  # neither wide glyphs nor ligatures
+  - quasi-proportional
 build_webfonts: no
 branch: master
 charvars:
-  digit-form: lining
+  digit-form: old-style
+  apl-form: enable
   capital-a: curly-serifless
   capital-b: standard-interrupted-bilateral-serifed
   capital-c: serifless
@@ -71,6 +74,7 @@ charvars:
   capital-gamma: serifless
   lower-iota: serifed-flat-tailed
   lower-lambda: curly
+  lower-mu: tailed
   lower-xi: flat-top
   cyrl-capital-ze: unilateral-serifed
   cyrl-ze: unilateral-serifed
@@ -85,9 +89,9 @@ charvars:
   cyrl-yeri: round
   cyrl-yery: round
   zero: slashed-oval
-  one: nobase
+  one: no-base
   two: curly-neck
-  three: flattop
+  three: flat-top
   four: semi-open
   five: oblique-upper-left-bar
   six: open-contour

@@ -41,43 +41,28 @@ jobs:
       - name: render PKGBUILDs
         run: ./mk/pkgbuilds.sh
 
-      - name: create release
-        id: create_release
-        uses: actions/create-release@@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-
 @for pkgname in build:
       - name: copy @pkgname PKGBUILD into build ctnr
         run: |
           buildah copy --chown dev ctnr pkgs/@pkgname /home/dev/@pkgname
 
-      - name: build and siphon @pkgname from build ctnr, setting PKG to artifact filename
+      - name: build and siphon @pkgname from build ctnr
         run: |
           buildah config -u dev --workingdir /home/dev/@pkgname ctnr
           buildah run ctnr makepkg --noconfirm -s
 
-          buildah run ctnr ls -l
+          buildah run ctnr ls -lh
 
           pkg="$(buildah run ctnr sh -c "printf '%s\n' *.pkg.*")"
-          buildah run ctnr cat "$pkg" >"$pkg"
+          mkdir -p "${RUNNER_TEMP}/dist"
+          buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
 
-          printf '%s\n' "PKG=$pkg" >>$GITHUB_ENV
-
-      - name: upload pkg as release asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ env.PKG }}
-          asset_name: ${{ env.PKG }}
-          asset_content_type: application/zip
+          printf '%s\n' "${RUNNER_TEMP}/dist/"
+          ls -lh "${RUNNER_TEMP}/dist/"
 
 @end
+      - name: Release
+        uses: softprops/action-gh-release@@v1
+        with:
+          files: ${{ runner.temp }}/dist/*
+          fail_on_unmatched_files: true

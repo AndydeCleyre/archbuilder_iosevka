@@ -40,41 +40,44 @@ jobs:
       - name: render PKGBUILDs
         run: ./mk/pkgbuilds.sh
 
-      - name: create release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
-
       - name: copy ttf-iosevka-term-custom-git PKGBUILD into build ctnr
         run: |
           buildah copy --chown dev ctnr pkgs/ttf-iosevka-term-custom-git /home/dev/ttf-iosevka-term-custom-git
 
-      - name: build and siphon ttf-iosevka-term-custom-git from build ctnr, setting PKG to artifact filename
+      - name: build and siphon ttf-iosevka-term-custom-git from build ctnr
         run: |
           buildah config -u dev --workingdir /home/dev/ttf-iosevka-term-custom-git ctnr
           buildah run ctnr makepkg --noconfirm -s
 
-          buildah run ctnr ls -l
+          buildah run ctnr ls -lh
 
           pkg="$(buildah run ctnr sh -c "printf '%s\n' *.pkg.*")"
-          buildah run ctnr cat "$pkg" >"$pkg"
+          mkdir -p "${RUNNER_TEMP}/dist"
+          buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
 
-          printf '%s\n' "PKG=$pkg" >>$GITHUB_ENV
+          printf '%s\n' "${RUNNER_TEMP}/dist/"
+          ls -lh "${RUNNER_TEMP}/dist/"
 
-      - name: upload pkg as release asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: copy ttf-iosevka-quasi-proportional-custom-git PKGBUILD into build ctnr
+        run: |
+          buildah copy --chown dev ctnr pkgs/ttf-iosevka-quasi-proportional-custom-git /home/dev/ttf-iosevka-quasi-proportional-custom-git
+
+      - name: build and siphon ttf-iosevka-quasi-proportional-custom-git from build ctnr
+        run: |
+          buildah config -u dev --workingdir /home/dev/ttf-iosevka-quasi-proportional-custom-git ctnr
+          buildah run ctnr makepkg --noconfirm -s
+
+          buildah run ctnr ls -lh
+
+          pkg="$(buildah run ctnr sh -c "printf '%s\n' *.pkg.*")"
+          mkdir -p "${RUNNER_TEMP}/dist"
+          buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
+
+          printf '%s\n' "${RUNNER_TEMP}/dist/"
+          ls -lh "${RUNNER_TEMP}/dist/"
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ env.PKG }}
-          asset_name: ${{ env.PKG }}
-          asset_content_type: application/zip
-
+          files: ${{ runner.temp }}/dist/*
+          fail_on_unmatched_files: true

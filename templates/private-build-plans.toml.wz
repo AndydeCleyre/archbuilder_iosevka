@@ -1,45 +1,34 @@
 @require(charvars, spacings)
+@#
 @for spacing in spacings:
-[buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom]
-family = "Iosevka @{spacing and spacing.replace('-', ' ').title() + ' ' or ''}Custom"
+@(
+    plan=f"iosevka-{spacing and spacing + '-' or ''}custom"
+    family=plan.replace('-', ' ').title()
+)\
+@#
+[buildPlans.@plan]
+family = "@family"
+export-glyph-names = true
 @if spacing:
 spacing = "@spacing"
 @end
 
-# [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.variants]
-# inherits = "ss14"
+[buildPlans.@{plan}.ligations]
+inherits = "dlig"
+# disables = []
+# enables = []
 
-[buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.variants.design]
+# [buildPlans.@{plan}.variants]
+# inherits = "ss16"
+
+[buildPlans.@{plan}.variants.design]
 @for char, style in charvars.items():
 @char = "@style"
 @end
 
 # Override above variants for each slope:
-# [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.variants.upright]
-# [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.variants.italic]
-# [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.variants.oblique]
-
-# [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.ligations]
-# inherits = "calt"
-# disables = []
-# enables = []
-
-# [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.slopes.upright]
-# angle = 0             # Angle in degrees. Valid range [0, 15]
-# shape = "upright"     # Slope grade used for shape selection.  `upright` | `oblique` | `italic`
-# menu  = "upright"     # Slope grade used for naming.           `upright` | `oblique` | `italic`
-# css   = "normal"      # Slope grade used for webfont CSS.      `normal`  | `oblique` | `italic`
-
-# [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.slopes.oblique]
-# angle = 9.4
-# shape = "oblique"
-# menu  = "oblique"
-# css   = "oblique"
-
-# [buildPlans.iosevka-@{spacing and spacing + '-' or ''}custom.slopes.italic]
-# angle = 9.4
-# shape = "italic"
-# menu  = "italic"
-# css   = "italic"
+# [buildPlans.@{plan}.variants.upright]
+# [buildPlans.@{plan}.variants.italic]
+# [buildPlans.@{plan}.variants.oblique]
 
 @end
