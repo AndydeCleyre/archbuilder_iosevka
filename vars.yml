@@ -105,7 +105,7 @@ charvars:
   caret: high
   paren: normal
   brace: curly
-  number-sign: upright
+  number-sign: upright-tall
   ampersand: flat-top
   at: short
   dollar: open-cap
