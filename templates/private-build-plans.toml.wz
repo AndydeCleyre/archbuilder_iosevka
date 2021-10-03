@@ -2,7 +2,7 @@
 @#
 @for spacing in spacings:
 @(
-    plan=f"iosevka-{spacing and spacing + '-' or ''}custom"
+    plan='-'.join(filter(None, ('iosevka', spacing, 'custom')))
     family=plan.replace('-', ' ').title()
 )\
 @#
