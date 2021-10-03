@@ -10,6 +10,8 @@ The built package can be installed on Arch Linux with ``sudo pacman -U``,
 or you can simply extract the fonts with your favorite archive tool for use on
 any system.
 
+To run the included scripts, you'll need ``python3-venv``.
+
 .. contents::
    :depth: 1
 
@@ -25,14 +27,6 @@ fork this repo on GitHub, then:
 
      $ git clone <your-github-fork>
      $ cd archbuilder_iosevka
-
-- activate a `Python Virtual Environment`_ matching ``requirements.txt``:
-
-  .. code:: console
-
-     $ python3 -m venv venv
-     $ . ./venv/bin/activate
-     $ python -m pip install -r requirements.txt
 
 - configure your font, either by editing ``vars.yml``:
 
@@ -54,7 +48,7 @@ fork this repo on GitHub, then:
 
      $ git commit -am "much better now"
      $ git tag awesome-build-label
-     $ git push --tags
+     $ git push && git push --tags
 
 You can watch the build process in your ``Actions`` tab,
 or using GitHub's CLI_:
@@ -63,65 +57,12 @@ or using GitHub's CLI_:
 
    $ gh run watch
 
-After anywhere from 30-120 minutes you can
+After anywhere from 30-120+ minutes you can
 get the built font from your ``Releases`` page, or:
 
 .. code:: console
 
    $ gh release download -p '*'
-
-Python Virtual Environment
---------------------------
-
-We use two small Python tools to render the Workflow (``buildpkg.yml``)
-from an included template, using the data in ``vars.yml``.
-
-You can create and activate a virtual environment in your favorite way,
-as long as it has the packages listed in ``requirements.txt``.
-
-Some methods are described below.
-
-Python's ``venv`` Directly
-++++++++++++++++++++++++++
-
-.. code:: console
-
-   $ python3 -m venv venv
-   $ . ./venv/bin/activate
-   $ python -m pip install -r requirements.txt
-
-zpy
-+++
-
-zpy_ is a toolset for managing Python venvs and packages, with Zsh and pip-tools_.
-
-Either create and activate a venv matching ``requirements.txt``:
-
-.. code:: console
-
-   % envin
-
-or install the necessary tools (wheezy.template, yamlpath) into their own isolated venvs,
-adding links to the relevant scripts (``wheezy.template``, ``yaml-get``) to your ``PATH``:
-
-.. code:: console
-
-   % pipz install --cmd wheezy.template,yaml-get wheezy.template yamlpath
-
-pipenv
-++++++
-
-.. code:: console
-
-   $ pipenv shell
-   $ pipenv install
-
-pipx
-++++
-
-.. code:: console
-
-   $ pipx install wheezy.template yamlpath
 
 Using the Customizer Site
 -------------------------
@@ -148,8 +89,6 @@ To use a configuration thus generated with this builder:
 
 .. _Iosevka: https://github.com/be5invis/Iosevka/
 .. _an official web app: https://typeof.net/Iosevka/customizer
-.. _zpy: https://github.com/andydecleyre/zpy
-.. _pip-tools: https://github.com/jazzband/pip-tools
 .. _CLI: https://github.com/cli/cli
 
 .. |build status| image:: https://github.com/AndydeCleyre/archbuilder_iosevka/workflows/Build%20and%20upload%20Arch%20Linux%20packages/badge.svg
