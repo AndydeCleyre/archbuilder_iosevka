@@ -1,7 +1,10 @@
 @require(spacing, pbp_sha256, build_webfonts, branch)
+@(
+    name = '-'.join(filter(None, ('ttf-iosevka', spacing, 'custom')))
+)\
 # Maintainer: Andy Kluger <https://t.me/andykluger>
 # Contributor: Markus Weimar <mail@@markusweimar.de>
-_pkgname=ttf-iosevka-@{spacing and spacing + '-' or ''}custom
+_pkgname=@name
 pkgname=${_pkgname}-git
 pkgver=1
 pkgrel=1
