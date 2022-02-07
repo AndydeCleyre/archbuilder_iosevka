@@ -40,7 +40,6 @@ yaml-get -p 'spacings.*' "${gitroot}"/vars.yml | while read -r spacing; do
 
   if command -v makepkg >/dev/null; then
     cd "${folder}"
-    makepkg -os
     makepkg --printsrcinfo >.SRCINFO
     printf '%s\n' "Wrote ${folder}/.SRCINFO"
   fi
