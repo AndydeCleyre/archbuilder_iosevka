@@ -103,7 +103,7 @@ charvars:
   tilde: low
   asterisk: turn-hex-high
   underscore: high
-  paragraph-sign: low
+  pilcrow: low
   caret: high
   paren: normal
   brace: curly
