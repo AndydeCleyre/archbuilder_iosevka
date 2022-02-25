@@ -7,11 +7,12 @@ build:
   # - ttf-iosevka-quasi-proportional-custom-git
   # - ttf-iosevka-quasi-proportional-extension-only-custom-git
 spacings:
-  - ''  # some wide glyphs
-  - term  # fewer wide glyphs
+  - ''               # some wide glyphs
+  - term             # fewer wide glyphs
   - fontconfig-mono  # no wide glyphs
-  - fixed  # neither wide glyphs nor ligatures
+  - fixed            # neither wide glyphs nor ligatures
   - quasi-proportional
+  - quasi-proportional-extension-only
 build_webfonts: no
 branch: master
 charvars:
@@ -32,7 +33,7 @@ charvars:
   capital-m: hanging-motion-serifed
   capital-n: standard
   capital-p: closed-motion-serifed
-  capital-q: crossing
+  capital-q: open-swash
   capital-r: straight-open
   capital-s: serifless
   capital-t: serifless
@@ -58,7 +59,7 @@ charvars:
   n: earless-corner-tailed
   p: motion-serifed
   q: earless-corner-diagonal-tailed
-  r: earless-corner
+  r: corner-hooked
   s: serifless
   t: standard
   u: toothless-rounded
@@ -89,7 +90,7 @@ charvars:
   cyrl-ya: straight-tailed
   cyrl-yeri: round
   cyrl-yery: round
-  zero: slashed-oval
+  zero: slashed-split-oval
   one: no-base
   two: curly-neck
   three: flat-top
@@ -102,13 +103,13 @@ charvars:
   tilde: low
   asterisk: turn-hex-high
   underscore: high
-  paragraph-sign: low
+  pilcrow: low
   caret: high
   paren: normal
   brace: curly
-  number-sign: upright
+  number-sign: upright-tall
   ampersand: flat-top
-  at: short
+  at: fourfold-solid-inner-tall
   dollar: open-cap
   cent: open
   percent: rings-segmented-slash
