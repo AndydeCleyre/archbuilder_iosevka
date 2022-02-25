@@ -16,6 +16,9 @@ jobs:
       - name: create and update build ctnr from official repos
         run: |
           buildah from --name ctnr docker.io/library/archlinux:base-devel
+          buildah copy ctnr 'https://archlinux.org/mirrorlist/?country=US&protocol=https&ip_version=4&ip_version=6&use_mirror_status=on' /tmp/mirrorlist
+          buildah run ctnr sh -c "sed 's/^#Server =/Server =/g' /tmp/mirrorlist | shuf >/etc/pacman.d/mirrorlist"
+          buildah run ctnr chmod 0644 /etc/pacman.d/mirrorlist
           buildah run ctnr pacman --noconfirm -Syu
           buildah run ctnr pacman --noconfirm -S --needed git
 

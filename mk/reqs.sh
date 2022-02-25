@@ -5,16 +5,18 @@ if [ "$1" ]; then
   exit 1
 fi
 
-cd "$(git -C "$(dirname -- "$0")" rev-parse --show-toplevel)"
+gitroot="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
+cd "$gitroot"
 
 if [ ! -d venv ]; then
   python3 -m venv venv
 fi
 # shellcheck disable=SC1091
 . ./venv/bin/activate
-
-pip install -U pip-tools
+pip install -qU pip-tools
 
 for reqsin in *requirements.in; do
-  pip-compile -U --no-header "$reqsin"
+  pip-compile -U --no-header --annotation-style=line "$reqsin"
+  printf '%s\n' "Wrote lockfile for ${reqsin}"
+  git status --short "${reqsin}"
 done
