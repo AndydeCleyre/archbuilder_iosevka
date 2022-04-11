@@ -15,6 +15,14 @@ spacings:
   - quasi-proportional-extension-only
 build_webfonts: no
 branch: master
+use_custom_weights: yes
+custom_weights:
+  regular:
+    default: "400"
+    override: "500"
+  bold:
+    default: "700"
+    override: "800"
 charvars:
   digit-form: old-style
   apl-form: enable

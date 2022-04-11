@@ -1,5 +1,9 @@
-@require(charvars, spacings)
+@require(charvars, spacings, custom_weights, use_custom_weights)
 @#
+@(
+    if isinstance(use_custom_weights, str):
+        use_custom_weights = use_custom_weights.lower() in ('yes', 'true')
+)\
 @for spacing in spacings:
 @(
     plan='-'.join(filter(None, ('iosevka', spacing, 'custom')))
@@ -31,4 +35,13 @@ inherits = "dlig"
 # [buildPlans.@{plan}.variants.italic]
 # [buildPlans.@{plan}.variants.oblique]
 
+@if use_custom_weights:
+@for name, weight in custom_weights.items():
+[buildPlans.@{plan}.weights.@{name}]
+shape = @weight['override']
+menu = @weight['default']
+css = @weight['default']
+
+@end
+@end
 @end
