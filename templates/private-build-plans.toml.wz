@@ -8,7 +8,7 @@
 @#
 [buildPlans.@plan]
 family = "@family"
-export-glyph-names = true
+export-glyph-names = false
 @if spacing:
 spacing = "@spacing"
 @end
