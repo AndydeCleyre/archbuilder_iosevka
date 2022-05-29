@@ -1,4 +1,4 @@
-build:
+build:  # Uncomment the ones you wish to build
   # - ttf-iosevka-git
   # - ttf-iosevka-custom-git
   - ttf-iosevka-term-custom-git
@@ -6,13 +6,13 @@ build:
   # - ttf-iosevka-fixed-custom-git
   # - ttf-iosevka-quasi-proportional-custom-git
   - ttf-iosevka-quasi-proportional-extension-only-custom-git
-spacings:
+spacings:  # No need to change this list
   - ''               # some wide glyphs
   - term             # fewer wide glyphs
   - fontconfig-mono  # no wide glyphs
   - fixed            # neither wide glyphs nor ligatures
-  - quasi-proportional
-  - quasi-proportional-extension-only
+  - quasi-proportional                 # "normal" non-mono
+  - quasi-proportional-extension-only  # "normal" non-mono without making anything narrower (e.g. "i")
 build_webfonts: no
 branch: master
 use_custom_weights: yes
