@@ -1,6 +1,8 @@
 @require(spacing, pbp_sha256, build_webfonts, branch)
 @(
     name = '-'.join(filter(None, ('ttf-iosevka', spacing, 'custom')))
+    if isinstance(build_webfonts, str):
+        build_webfonts = build_webfonts.lower() in ('yes', 'true')
 )\
 # Maintainer: Andy Kluger <https://t.me/andykluger>
 # Contributor: Markus Weimar <mail@@markusweimar.de>

@@ -13,10 +13,10 @@ if [ ! -d venv ]; then
 fi
 # shellcheck disable=SC1091
 . ./venv/bin/activate
-pip install -qU pip-tools
+pip install -qU pip pip-and-pip-tools
 
 for reqsin in *requirements.in; do
-  pip-compile -U --no-header --annotation-style=line "$reqsin"
+  pip-compile -U --no-header --annotation-style=line --strip-extras "$reqsin"
   printf '%s\n' "Wrote lockfile for ${reqsin}"
   git status --short "${reqsin}"
 done

@@ -14,12 +14,7 @@ pip install -qr requirements.txt
 
 pbp_sha256="$(sha256sum "${gitroot}"/private-build-plans.toml | cut -d ' ' -f 1)"
 
-if [ "$(yaml-get -p build_webfonts "${gitroot}"/vars.yml)" = yes ]; then
-  build_webfonts=true
-else
-  build_webfonts=false
-fi
-
+build_webfonts="$(yaml-get -p build_webfonts "${gitroot}"/vars.yml)"
 upstream_branch="$(yaml-get -p branch "${gitroot}"/vars.yml)"
 
 yaml-get -p 'spacings.*' "${gitroot}"/vars.yml | while read -r spacing; do
@@ -29,12 +24,14 @@ yaml-get -p 'spacings.*' "${gitroot}"/vars.yml | while read -r spacing; do
 
   cp "${gitroot}"/private-build-plans.toml "${folder}"/private-build-plans.toml.example
 
-  wheezy.template "${gitroot}"/templates/PKGBUILD.wz '{
-    "spacing":       "'"$spacing"'",
-    "pbp_sha256":    "'"$pbp_sha256"'",
-    "build_webfonts": '"$build_webfonts"',
-    "branch":        "'"$upstream_branch"'"
-  }' >"${folder}"/PKGBUILD
+  wheezy.template "${gitroot}"/templates/PKGBUILD.wz "$(
+    printf '%s\n' '{}' | \
+    yaml-set -g spacing -a "$spacing" | \
+    yaml-set -g pbp_sha256 -a "$pbp_sha256" | \
+    yaml-set -g build_webfonts -a "$build_webfonts" | \
+    yaml-set -g branch -a "$upstream_branch" | \
+    yaml-get -p .
+  )" >"${folder}"/PKGBUILD
 
   printf '%s\n' "Wrote ${folder}/PKGBUILD"
 
