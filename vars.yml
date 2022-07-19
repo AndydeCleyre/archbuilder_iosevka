@@ -86,6 +86,8 @@ charvars:
   lower-lambda: curly
   lower-mu: tailed
   lower-xi: flat-top
+  cyrl-capital-zhe: symmetric-connected
+  cyrl-zhe: symmetric-connected
   cyrl-capital-ze: unilateral-serifed
   cyrl-ze: unilateral-serifed
   cyrl-capital-ka: curly-serifless
