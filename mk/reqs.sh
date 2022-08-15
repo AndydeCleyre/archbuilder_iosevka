@@ -8,11 +8,11 @@ fi
 gitroot="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
 cd "$gitroot"
 
-if [ ! -d venv ]; then
-  python3 -m venv venv
+if [ ! -d .venv ]; then
+  python3 -m venv .venv
 fi
 # shellcheck disable=SC1091
-. ./venv/bin/activate
+. ./.venv/bin/activate
 pip install -qU pip pip-and-pip-tools
 
 for reqsin in *requirements.in; do
