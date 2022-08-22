@@ -130,3 +130,4 @@ charvars:
   question: smooth
   punctuation-dot: round
   diacritic-dot: round
+  lig-neq: slightly-slanted
