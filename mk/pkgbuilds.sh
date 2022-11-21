@@ -3,11 +3,11 @@
 gitroot="$(git -C "$(dirname "$0")" rev-parse --show-toplevel)"
 cd "$gitroot"
 
-if [ ! -d venv ]; then
-  python3 -m venv venv
+if [ ! -d .venv ]; then
+  python3 -m venv .venv
 fi
 # shellcheck disable=SC1091
-. ./venv/bin/activate
+. ./.venv/bin/activate
 pip install -qr requirements.txt
 
 "${gitroot}"/mk/private-build-plans.toml.sh
