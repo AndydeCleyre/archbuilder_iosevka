@@ -14,7 +14,7 @@ spacings:  # No need to change this list
   - quasi-proportional                 # "normal" non-mono
   - quasi-proportional-extension-only  # "normal" non-mono without making anything narrower (e.g. "i")
 build_webfonts: no
-branch: master
+branch: main
 use_custom_weights: yes
 custom_weights:
   regular:
