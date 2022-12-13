@@ -43,13 +43,13 @@ jobs:
       - name: render PKGBUILDs
         run: ./mk/pkgbuilds.sh
 
-      - name: copy ttf-iosevka-term-custom-git PKGBUILD into build ctnr
+      - name: copy ttf-iosevka-custom-git PKGBUILD into build ctnr
         run: |
-          buildah copy --chown dev ctnr pkgs/ttf-iosevka-term-custom-git /home/dev/ttf-iosevka-term-custom-git
+          buildah copy --chown dev ctnr pkgs/ttf-iosevka-custom-git /home/dev/ttf-iosevka-custom-git
 
-      - name: build and siphon ttf-iosevka-term-custom-git from build ctnr
+      - name: build and siphon ttf-iosevka-custom-git from build ctnr
         run: |
-          buildah config -u dev --workingdir /home/dev/ttf-iosevka-term-custom-git ctnr
+          buildah config -u dev --workingdir /home/dev/ttf-iosevka-custom-git ctnr
           buildah run ctnr makepkg --noconfirm -s
 
           buildah run ctnr ls -lh
