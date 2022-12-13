@@ -1,47 +1,39 @@
-@require(charvars, spacings, custom_weights, use_custom_weights)
-@#
-@(
-    if isinstance(use_custom_weights, str):
-        use_custom_weights = use_custom_weights.lower() in ('yes', 'true')
-)\
-@for spacing in spacings:
-@(
-    plan='-'.join(filter(None, ('iosevka', spacing, 'custom')))
-    family=plan.replace('-', ' ').title()
-)\
-@#
-[buildPlans.@plan]
-family = "@family"
+[buildPlans.iosevka-custom]
+family = "Iosevka Custom"
+spacing = "normal"
+serifs = "sans"
+no-cv-ss = true
 export-glyph-names = false
-@if spacing:
-spacing = "@spacing"
-@end
 
-[buildPlans.@{plan}.ligations]
-inherits = "dlig"
-# disables = []
-# enables = []
-
-# [buildPlans.@{plan}.variants]
-# inherits = "ss16"
-
-[buildPlans.@{plan}.variants.design]
-@for char, style in charvars.items():
-@char = "@style"
-@end
-
-# Override above variants for each slope:
-# [buildPlans.@{plan}.variants.upright]
-# [buildPlans.@{plan}.variants.italic]
-# [buildPlans.@{plan}.variants.oblique]
-
-@if use_custom_weights:
-@for name, weight in custom_weights.items():
-[buildPlans.@{plan}.weights.@{name}]
-shape = @weight['override']
-menu = @weight['default']
-css = @weight['default']
-
-@end
-@end
-@end
+[buildPlans.iosevka-custom.variants.design]
+capital-j = "serifed-both-sides"
+capital-l = "motion-serifed"
+capital-q = "crossing"
+capital-w = "straight-flat-top"
+capital-z = "straight-serifed"
+b = "toothless-corner"
+d = "toothless-corner-serifless"
+f = "flat-hook"
+g = "single-storey-flat-hook-serifless"
+j = "flat-hook-serifed"
+p = "earless-corner"
+q = "earless-corner"
+t = "flat-hook"
+w = "straight-flat-top"
+y = "cursive-flat-hook"
+z = "straight-serifed"
+eszet = "sulzbacher-descending"
+lower-mu = "tailless"
+one = "base"
+two = "curly-neck"
+three = "flat-top"
+four = "closed"
+six = "closed-contour"
+seven = "straight-serifed"
+eight = "two-circles"
+nine = "closed-contour"
+paren = "flat-arc"
+brace = "straight"
+at = "fourfold"
+percent = "rings-continuous-slash"
+lig-equal-chain = "without-notch"

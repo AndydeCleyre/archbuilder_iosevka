@@ -5,7 +5,7 @@ build:  # Uncomment the ones you wish to build
   # - ttf-iosevka-fontconfig-mono-custom-git
   # - ttf-iosevka-fixed-custom-git
   # - ttf-iosevka-quasi-proportional-custom-git
-  - ttf-iosevka-quasi-proportional-extension-only-custom-git
+  # - ttf-iosevka-quasi-proportional-extension-only-custom-git
 spacings:  # No need to change this list
   - ''               # some wide glyphs
   - term             # fewer wide glyphs
