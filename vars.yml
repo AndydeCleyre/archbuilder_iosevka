@@ -124,12 +124,13 @@ charvars:
   cent: open
   percent: rings-segmented-slash
   bar: natural-slope
-  lig-ltgteq: flat
   ascii-single-quote: raised-comma
   ascii-grave: straight
   question: smooth
   punctuation-dot: round
   diacritic-dot: round
+  partial-derivative: curly-bar
+  lig-ltgteq: flat
   lig-neq: slightly-slanted
   lig-equal-chain: with-notch
   lig-hyphen-chain: with-notch
