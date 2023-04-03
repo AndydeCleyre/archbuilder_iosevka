@@ -130,6 +130,7 @@ charvars:
   punctuation-dot: round
   diacritic-dot: round
   partial-derivative: curly-bar
+  micro-sign: tailless
   lig-ltgteq: flat
   lig-neq: slightly-slanted
   lig-equal-chain: with-notch
