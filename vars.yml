@@ -82,7 +82,7 @@ charvars:
   lower-alpha: crossing
   lower-delta: rounded
   capital-gamma: serifless
-  lower-iota: serifed-flat-tailed
+  lower-iota: tailed-serifed
   lower-lambda: curly
   lower-mu: tailed
   lower-xi: flat-top
