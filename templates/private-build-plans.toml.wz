@@ -6,8 +6,8 @@
 )\
 @for spacing in spacings:
 @(
-    plan='-'.join(filter(None, ('iosevka', spacing, 'custom')))
-    family=plan.replace('-', ' ').title()
+    plan = '-'.join(filter(None, ('iosevka', spacing, 'custom')))
+    family = plan.replace('-', ' ').title()
 )\
 @#
 [buildPlans.@plan]
