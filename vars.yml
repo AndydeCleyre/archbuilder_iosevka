@@ -102,7 +102,7 @@ charvars:
   cyrl-ya: straight-tailed-serifless
   cyrl-yeri: round
   cyrl-yery: round
-  zero: diamond-dotted
+  zero: diamond-unslashed
   one: no-base
   two: curly-neck
   three: flat-top
