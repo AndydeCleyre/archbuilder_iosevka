@@ -28,7 +28,7 @@ fork this repo on GitHub, then:
      $ git clone <your-github-fork>
      $ cd archbuilder_iosevka
 
-- configure your font, either by editing ``vars.yml``:
+- configure your font (see the `character variants`_), either by editing ``vars.yml``:
 
   .. code:: console
 
@@ -46,8 +46,8 @@ fork this repo on GitHub, then:
 
   .. code:: console
 
-     $ git commit -am "much better now"
-     $ git tag awesome-build-label
+     $ git commit -am "whatever change message you want"
+     $ git tag whatever-label-you-want
      $ git push && git push --tags
 
 You can watch the build process in your ``Actions`` tab,
@@ -88,6 +88,7 @@ To use a configuration thus generated with this builder:
 
 
 .. _Iosevka: https://github.com/be5invis/Iosevka/
+.. _character variants: https://github.com/be5invis/Iosevka/blob/main/doc/custom-build.md
 .. _an official web app: https://typeof.net/Iosevka/customizer
 .. _CLI: https://github.com/cli/cli
 
