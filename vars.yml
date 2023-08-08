@@ -69,7 +69,7 @@ charvars:
   q: earless-corner-diagonal-tailed-serifless
   r: corner-hooked-serifless
   s: serifless
-  t: standard
+  t: bent-hook
   u: toothless-rounded-serifless
   v: curly-serifless
   w: cursive-serifless
@@ -77,15 +77,19 @@ charvars:
   y: curly-serifless
   z: straight-serifless-with-crossbar
   long-s: flat-hook-tailed
-  eszet: longs-s-lig-tailed
-  turn-v: curly
+  eszet: longs-s-lig-tailed-serifless
+  lower-eth: straight-bar
+  lower-thorn: serifed
   lower-alpha: crossing
-  lower-delta: rounded
   capital-gamma: bottom-serifed
+  capital-delta: curly
+  lower-delta: rounded
   lower-iota: tailed-serifed
+  capital-lambda: curly-top-serifed
   lower-lambda: curly
   lower-mu: tailed-serifless
   lower-xi: flat-top
+  lower-chi: curly-serifed
   cyrl-capital-zhe: curly
   cyrl-zhe: curly
   cyrl-capital-ze: unilateral-serifed
@@ -132,7 +136,6 @@ charvars:
   pilcrow: low
   cent: open
   partial-derivative: curly-bar
-  lower-eth: straight-bar
   micro-sign: toothed-serifless
   lig-ltgteq: flat
   lig-neq: slightly-slanted
