@@ -89,6 +89,8 @@ charvars:
   lower-lambda: curly
   lower-mu: tailed-serifless
   lower-xi: flat-top
+  lower-pi: tailed
+  lower-tau: flat-tailed
   lower-chi: curly-serifed
   cyrl-capital-zhe: curly
   cyrl-zhe: curly
@@ -137,6 +139,7 @@ charvars:
   cent: open
   partial-derivative: curly-bar
   micro-sign: toothed-serifless
+  guillemet: curly
   lig-ltgteq: flat
   lig-neq: slightly-slanted
   lig-equal-chain: with-notch
