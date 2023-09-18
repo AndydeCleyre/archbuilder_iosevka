@@ -104,8 +104,8 @@ charvars:
   cyrl-ef: cursive
   cyrl-che: tailed
   cyrl-capital-u: curly-turn-serifless
-  cyrl-capital-ya: straight-serifless
-  cyrl-ya: straight-tailed-serifless
+  cyrl-capital-ya: straight-motion-serifed
+  cyrl-ya: straight-tailed-motion-serifed
   cyrl-yeri: round
   cyrl-yery: round
   zero: diamond-unslashed
