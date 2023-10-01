@@ -101,7 +101,9 @@ charvars:
   cyrl-el: straight
   cyrl-em: slanted-sides-hanging-serifed
   cyrl-en: tailed-top-left-serifed
-  cyrl-capital-u: curly-turn-serifless
+  cyrl-er: earless-rounded-serifless
+  cyrl-capital-u: cursive-flat-hook-serifless
+  cyrl-u: cursive-flat-hook-serifless
   cyrl-ef: cursive
   cyrl-che: tailed
   cyrl-yeri: round
