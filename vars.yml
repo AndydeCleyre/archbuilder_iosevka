@@ -101,13 +101,13 @@ charvars:
   cyrl-el: straight
   cyrl-em: slanted-sides-hanging-serifed
   cyrl-en: tailed-top-left-serifed
+  cyrl-capital-u: curly-turn-serifless
   cyrl-ef: cursive
   cyrl-che: tailed
-  cyrl-capital-u: curly-turn-serifless
-  cyrl-capital-ya: straight-motion-serifed
-  cyrl-ya: straight-tailed-motion-serifed
   cyrl-yeri: round
   cyrl-yery: round
+  cyrl-capital-ya: straight-motion-serifed
+  cyrl-ya: straight-tailed-motion-serifed
   zero: diamond-unslashed
   one: no-base
   two: curly-neck
