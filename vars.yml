@@ -19,7 +19,7 @@ use_custom_weights: yes
 custom_weights:
   regular:
     default: "400"
-    override: "500"
+    override: "600"
   bold:
     default: "700"
     override: "800"
