@@ -86,12 +86,12 @@ charvars:
   lower-delta: rounded
   lower-iota: tailed-serifed
   capital-lambda: curly-top-serifed
-  lower-lambda: curly
+  lower-lambda: tailed-turn
   lower-mu: tailed-serifless
   lower-xi: flat-top
   lower-pi: tailed
   lower-tau: flat-tailed
-  lower-chi: curly-serifed
+  lower-chi: semi-chancery-straight
   cyrl-capital-zhe: curly
   cyrl-zhe: curly
   cyrl-capital-ze: unilateral-serifed
