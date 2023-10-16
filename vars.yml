@@ -138,7 +138,7 @@ charvars:
   ascii-grave: straight
   question: smooth
   pilcrow: low
-  cent: open
+  cent: open-cap
   partial-derivative: curly-bar
   micro-sign: toothed-serifless
   guillemet: curly
