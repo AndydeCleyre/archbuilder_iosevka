@@ -19,7 +19,7 @@ use_custom_weights: yes
 custom_weights:
   regular:
     default: "400"
-    override: "500"
+    override: "600"
   bold:
     default: "700"
     override: "800"
@@ -69,7 +69,7 @@ charvars:
   q: earless-corner-diagonal-tailed-serifless
   r: corner-hooked-serifless
   s: serifless
-  t: standard
+  t: bent-hook
   u: toothless-rounded-serifless
   v: curly-serifless
   w: cursive-serifless
@@ -77,15 +77,21 @@ charvars:
   y: curly-serifless
   z: straight-serifless-with-crossbar
   long-s: flat-hook-tailed
-  eszet: longs-s-lig-tailed
-  turn-v: curly
+  eszet: longs-s-lig-tailed-serifless
+  lower-eth: straight-bar
+  lower-thorn: serifed
   lower-alpha: crossing
-  lower-delta: rounded
   capital-gamma: bottom-serifed
+  capital-delta: curly
+  lower-delta: rounded
   lower-iota: tailed-serifed
-  lower-lambda: curly
+  capital-lambda: curly-top-serifed
+  lower-lambda: tailed-turn
   lower-mu: tailed-serifless
   lower-xi: flat-top
+  lower-pi: tailed
+  lower-tau: flat-tailed
+  lower-chi: semi-chancery-straight
   cyrl-capital-zhe: curly
   cyrl-zhe: curly
   cyrl-capital-ze: unilateral-serifed
@@ -95,19 +101,21 @@ charvars:
   cyrl-el: straight
   cyrl-em: slanted-sides-hanging-serifed
   cyrl-en: tailed-top-left-serifed
+  cyrl-er: earless-rounded-serifless
+  cyrl-capital-u: cursive-flat-hook-serifless
+  cyrl-u: cursive-flat-hook-serifless
   cyrl-ef: cursive
   cyrl-che: tailed
-  cyrl-capital-u: curly-turn-serifless
-  cyrl-capital-ya: straight-serifless
-  cyrl-ya: straight-tailed-serifless
   cyrl-yeri: round
   cyrl-yery: round
+  cyrl-capital-ya: straight-motion-serifed
+  cyrl-ya: straight-tailed-motion-serifed
   zero: diamond-unslashed
   one: no-base
   two: curly-neck
   three: flat-top
   four: semi-open
-  five: oblique-upper-left-bar
+  five: oblique-arched
   six: open-contour
   seven: curly-serifless
   eight: crossing-asymmetric
@@ -130,10 +138,10 @@ charvars:
   ascii-grave: straight
   question: smooth
   pilcrow: low
-  cent: open
+  cent: open-cap
   partial-derivative: curly-bar
-  lower-eth: straight-bar
   micro-sign: toothed-serifless
+  guillemet: curly
   lig-ltgteq: flat
   lig-neq: slightly-slanted
   lig-equal-chain: with-notch
