@@ -23,8 +23,8 @@ spacings:
   # "normal" non-mono without making anything narrower (e.g. "i")
 build_webfonts: no
 use_custom_weights: yes
-contextual_widths: no
-branch: main
+contextual_widths: yes
+branch: dev
 custom_weights:
   regular:
     default: 400
