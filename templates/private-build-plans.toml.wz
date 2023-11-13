@@ -11,8 +11,8 @@
 @#
 [buildPlans.@plan]
 family = "@family"
-export-glyph-names = false
-build-texture-feature = @contextual_widths
+exportGlyphNames = false
+buildTextureFeature = @contextual_widths
 @if spacing:
 spacing = "@spacing"
 @end
