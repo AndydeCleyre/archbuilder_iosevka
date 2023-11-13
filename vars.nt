@@ -1,29 +1,37 @@
-build:  # Uncomment the ones you wish to build
+build:
+  # Uncomment the ones you wish to build
+  - ttf-iosevka-term-custom-git
+  - ttf-iosevka-quasi-proportional-extension-only-custom-git
   # - ttf-iosevka-git
   # - ttf-iosevka-custom-git
-  - ttf-iosevka-term-custom-git
   # - ttf-iosevka-fontconfig-mono-custom-git
   # - ttf-iosevka-fixed-custom-git
   # - ttf-iosevka-quasi-proportional-custom-git
-  - ttf-iosevka-quasi-proportional-extension-only-custom-git
-spacings:  # No need to change this list
-  - ''               # some wide glyphs
-  - term             # fewer wide glyphs
-  - fontconfig-mono  # no wide glyphs
-  - fixed            # neither wide glyphs nor ligatures
-  - quasi-proportional                 # "normal" non-mono
-  - quasi-proportional-extension-only  # "normal" non-mono without making anything narrower (e.g. "i")
+spacings:
+  # No need to change this list
+  -
+  # (empty space) some wide glyphs
+  - term
+  # fewer wide glyphs
+  - fontconfig-mono
+  # no wide glyphs
+  - fixed
+  # neither wide glyphs nor ligatures
+  - quasi-proportional
+  # "normal" non-mono
+  - quasi-proportional-extension-only
+  # "normal" non-mono without making anything narrower (e.g. "i")
 build_webfonts: no
-branch: main
 use_custom_weights: yes
 contextual_widths: no
+branch: main
 custom_weights:
   regular:
-    default: "400"
-    override: "600"
+    default: 400
+    override: 600
   bold:
-    default: "700"
-    override: "800"
+    default: 700
+    override: 800
 charvars:
   digit-form: old-style
   apl-form: enable

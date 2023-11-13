@@ -1,0 +1,4 @@
+boolean:
+  - build_webfonts
+  - use_custom_weights
+  - contextual_widths

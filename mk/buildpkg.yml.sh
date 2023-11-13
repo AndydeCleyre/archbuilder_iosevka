@@ -10,7 +10,7 @@ fi
 pip install -qr requirements.txt
 
 wheezy.template "${gitroot}"/templates/buildpkg.yml.wz \
-  "$(yaml-get -p . "${gitroot}"/vars.yml)" \
+  "$(nt2json -s "${gitroot}"/vars.types.nt "${gitroot}"/vars.nt)" \
 >"${gitroot}"/.github/workflows/buildpkg.yml
 
 printf '%s\n' "Wrote ${gitroot}/.github/workflows/buildpkg.yml"
