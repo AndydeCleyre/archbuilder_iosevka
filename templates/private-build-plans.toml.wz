@@ -1,8 +1,11 @@
-@require(charvars, spacings, custom_weights, use_custom_weights)
+@require(charvars, spacings, custom_weights, use_custom_weights, contextual_widths)
 @#
 @(
     if isinstance(use_custom_weights, str):
         use_custom_weights = use_custom_weights.lower() in ('yes', 'true')
+    if isinstance(contextual_widths, str):
+        contextual_widths = contextual_widths.lower() in ('yes', 'true')
+        contextual_widths = str(contextual_widths).lower()
 )\
 @for spacing in spacings:
 @(
@@ -13,6 +16,7 @@
 [buildPlans.@plan]
 family = "@family"
 export-glyph-names = false
+build-texture-feature = @contextual_widths
 @if spacing:
 spacing = "@spacing"
 @end

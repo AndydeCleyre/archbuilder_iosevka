@@ -16,6 +16,7 @@ spacings:  # No need to change this list
 build_webfonts: no
 branch: main
 use_custom_weights: yes
+contextual_widths: yes
 custom_weights:
   regular:
     default: "400"
