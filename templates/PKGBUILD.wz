@@ -3,6 +3,7 @@
     if spacing == 'normal':
         spacing = ''
     name = '-'.join(filter(None, ('ttf-iosevka', spacing, 'custom')))
+    plan = f"Iosevka{spacing.title()}Custom"
 )\
 # Maintainer: Andy Kluger <https://t.me/andykluger>
 # Contributor: Markus Weimar <mail@@markusweimar.de>
@@ -46,7 +47,7 @@ build () {
   cd Iosevka
   npm install
   npm update
-  NO_COLOR=1 npm run build -- @{build_webfonts and 'contents' or 'ttf'}::${_pkgname#*-}
+  NO_COLOR=1 npm run build -- @{build_webfonts and 'contents' or 'ttf'}::@{plan}
 }
 
 package () {
