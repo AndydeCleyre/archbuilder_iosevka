@@ -22,7 +22,11 @@ upstream_branch="$(yaml-get -p branch "$vars")"
 
 yaml-get -p 'spacings.*' "$vars" | while read -r spacing; do
 
-  folder="${gitroot}/pkgs/ttf-iosevka-${spacing}${spacing:+-}custom-git"
+  if [ "$spacing" = normal ]; then
+    folder="${gitroot}/pkgs/ttf-iosevka-custom-git"
+  else
+    folder="${gitroot}/pkgs/ttf-iosevka-${spacing}-custom-git"
+  fi
   mkdir -p "$folder"
 
   cp "${gitroot}"/private-build-plans.toml "${folder}"/private-build-plans.toml.example

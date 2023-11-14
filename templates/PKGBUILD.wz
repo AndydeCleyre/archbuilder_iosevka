@@ -1,5 +1,7 @@
 @require(spacing, pbp_sha256, build_webfonts, branch)
 @(
+    if spacing == 'normal':
+        spacing = ''
     name = '-'.join(filter(None, ('ttf-iosevka', spacing, 'custom')))
 )\
 # Maintainer: Andy Kluger <https://t.me/andykluger>
