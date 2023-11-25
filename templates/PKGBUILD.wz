@@ -1,9 +1,17 @@
 @require(spacing, pbp_sha256, build_webfonts, branch)
 @(
-    if spacing == 'normal':
-        spacing = ''
     name = '-'.join(filter(None, ('ttf-iosevka', spacing, 'custom')))
-    plan = f"Iosevka{spacing.title()}Custom"
+    if spacing == 'normal':
+        plan = 'IosevkaCustom'
+        name = 'ttf-iosevka-custom'
+    elif spacing == 'quasi-proportional':
+        plan = 'IosevkaQpCustom'
+    elif spacing == 'quasi-proportional-extension-only':
+        plan = 'IosevkaQpeCustom'
+    elif spacing == 'fontconfig-mono':
+        plan = 'IosevkaFcmCustom'
+    else:
+        plan = f"Iosevka{spacing.title()}Custom"
 )\
 # Maintainer: Andy Kluger <https://t.me/andykluger>
 # Contributor: Markus Weimar <mail@@markusweimar.de>

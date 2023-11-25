@@ -8,6 +8,15 @@
     if spacing == 'normal':
         plan = 'IosevkaCustom'
         family = 'Iosevka Custom'
+    elif spacing == 'quasi-proportional':
+        plan = 'IosevkaQpCustom'
+        family = 'Iosevka QP Custom'
+    elif spacing == 'quasi-proportional-extension-only':
+        plan = 'IosevkaQpeCustom'
+        family = 'Iosevka QPE Custom'
+    elif spacing == 'fontconfig-mono':
+        plan = 'IosevkaFcmCustom'
+        family = 'Iosevka FCM Custom'
     else:
         plan = f"Iosevka{spacing.title()}Custom"
         family = f"Iosevka {spacing.title()} Custom"
