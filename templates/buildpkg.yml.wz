@@ -58,9 +58,17 @@ jobs:
           ls -lh "${RUNNER_TEMP}/dist/"
 
 @end
+      - name: make release notes
+        run: |
+          printf '%s\n' '`vars.nt`:' '```yaml' >release.md
+          cat vars.nt >>release.md
+          printf '%s\n' '```' '`private-build-plans.toml`:' '```toml' >>release.md
+          cat private-build-plans.toml >>release.md
+          printf '%s\n' '```' >>release.md
+
       - name: Release
         uses: softprops/action-gh-release@@v1
         with:
           files: ${{ runner.temp }}/dist/*
           fail_on_unmatched_files: true
-          body_path: vars.nt
+          body_path: release.md
