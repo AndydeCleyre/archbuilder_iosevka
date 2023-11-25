@@ -37,6 +37,42 @@ jobs:
       - name: render PKGBUILDs
         run: ./mk/pkgbuilds.sh
 
+      - name: copy ttf-iosevka-custom-git PKGBUILD into build ctnr
+        run: |
+          buildah copy --chown dev ctnr pkgs/ttf-iosevka-custom-git /home/dev/ttf-iosevka-custom-git
+
+      - name: build and siphon ttf-iosevka-custom-git from build ctnr
+        run: |
+          buildah config -u dev --workingdir /home/dev/ttf-iosevka-custom-git ctnr
+          buildah run ctnr makepkg --noconfirm -s
+
+          buildah run ctnr ls -lh
+
+          pkg="$(buildah run ctnr sh -c "printf '%s\n' *.pkg.*")"
+          mkdir -p "${RUNNER_TEMP}/dist"
+          buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
+
+          printf '%s\n' "${RUNNER_TEMP}/dist/"
+          ls -lh "${RUNNER_TEMP}/dist/"
+
+      - name: copy ttf-iosevka-term-custom-git PKGBUILD into build ctnr
+        run: |
+          buildah copy --chown dev ctnr pkgs/ttf-iosevka-term-custom-git /home/dev/ttf-iosevka-term-custom-git
+
+      - name: build and siphon ttf-iosevka-term-custom-git from build ctnr
+        run: |
+          buildah config -u dev --workingdir /home/dev/ttf-iosevka-term-custom-git ctnr
+          buildah run ctnr makepkg --noconfirm -s
+
+          buildah run ctnr ls -lh
+
+          pkg="$(buildah run ctnr sh -c "printf '%s\n' *.pkg.*")"
+          mkdir -p "${RUNNER_TEMP}/dist"
+          buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
+
+          printf '%s\n' "${RUNNER_TEMP}/dist/"
+          ls -lh "${RUNNER_TEMP}/dist/"
+
       - name: copy ttf-iosevka-quasi-proportional-custom-git PKGBUILD into build ctnr
         run: |
           buildah copy --chown dev ctnr pkgs/ttf-iosevka-quasi-proportional-custom-git /home/dev/ttf-iosevka-quasi-proportional-custom-git
@@ -55,9 +91,27 @@ jobs:
           printf '%s\n' "${RUNNER_TEMP}/dist/"
           ls -lh "${RUNNER_TEMP}/dist/"
 
+      - name: copy ttf-iosevka-quasi-proportional-extension-only-custom-git PKGBUILD into build ctnr
+        run: |
+          buildah copy --chown dev ctnr pkgs/ttf-iosevka-quasi-proportional-extension-only-custom-git /home/dev/ttf-iosevka-quasi-proportional-extension-only-custom-git
+
+      - name: build and siphon ttf-iosevka-quasi-proportional-extension-only-custom-git from build ctnr
+        run: |
+          buildah config -u dev --workingdir /home/dev/ttf-iosevka-quasi-proportional-extension-only-custom-git ctnr
+          buildah run ctnr makepkg --noconfirm -s
+
+          buildah run ctnr ls -lh
+
+          pkg="$(buildah run ctnr sh -c "printf '%s\n' *.pkg.*")"
+          mkdir -p "${RUNNER_TEMP}/dist"
+          buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
+
+          printf '%s\n' "${RUNNER_TEMP}/dist/"
+          ls -lh "${RUNNER_TEMP}/dist/"
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ runner.temp }}/dist/*
           fail_on_unmatched_files: true
-          body_path: private-build-plans.toml
+          body_path: vars.nt

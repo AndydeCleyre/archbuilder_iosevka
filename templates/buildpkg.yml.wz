@@ -63,4 +63,4 @@ jobs:
         with:
           files: ${{ runner.temp }}/dist/*
           fail_on_unmatched_files: true
-          body_path: private-build-plans.toml
+          body_path: vars.nt
