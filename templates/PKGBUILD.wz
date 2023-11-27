@@ -1,6 +1,6 @@
 @require(spacing, pbp_sha256, build_webfonts, branch)
 @(
-    name = '-'.join(filter(None, ('ttf-iosevka', spacing, 'custom')))
+    name = f"ttf-iosevka-{spacing}-custom"
     if spacing == 'normal':
         plan = 'IosevkaCustom'
         name = 'ttf-iosevka-custom'
