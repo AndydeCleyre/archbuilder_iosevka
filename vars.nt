@@ -26,10 +26,10 @@ use_custom_weights: yes
 contextual_widths: yes
 branch: dev
 custom_weights:
-  regular:
+  Regular:
     default: 400
     override: 600
-  bold:
+  Bold:
     default: 700
     override: 800
 charvars:
