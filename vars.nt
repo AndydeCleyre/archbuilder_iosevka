@@ -1,9 +1,9 @@
 build:
   # Uncomment the ones you wish to build
-  # - ttf-iosevka-custom-git
-  # - ttf-iosevka-term-custom-git
-  # - ttf-iosevka-quasi-proportional-custom-git
-  - ttf-iosevka-git
+  - ttf-iosevka-custom-git
+  - ttf-iosevka-term-custom-git
+  - ttf-iosevka-quasi-proportional-custom-git
+  # - ttf-iosevka-git
   # - ttf-iosevka-fixed-custom-git
   # - ttf-iosevka-fontconfig-mono-custom-git
   # - ttf-iosevka-quasi-proportional-extension-only-custom-git
