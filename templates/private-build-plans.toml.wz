@@ -1,5 +1,4 @@
-@require(charvars, spacings, custom_weights, use_custom_weights, contextual_widths)
-@#
+@require(charvars, italic_overrides, spacings, custom_weights, use_custom_weights, contextual_widths)
 @(
     contextual_widths = str(contextual_widths).lower()
 )\
@@ -21,7 +20,6 @@
         plan = f"Iosevka{spacing.title()}Custom"
         family = f"Iosevka {spacing.title()} Custom"
 )\
-@#
 [buildPlans.@{plan}]
 family = "@family"
 exportGlyphNames = false
@@ -43,7 +41,10 @@ inherits = "dlig"
 
 # Override above variants for each slope:
 # [buildPlans.@{plan}.variants.upright]
-# [buildPlans.@{plan}.variants.italic]
+[buildPlans.@{plan}.variants.italic]
+@for char, style in italic_overrides.items():
+@char = "@style"
+@end
 
 @if use_custom_weights:
 @for name, weight in custom_weights.items():

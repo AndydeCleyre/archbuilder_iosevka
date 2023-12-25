@@ -32,6 +32,8 @@ custom_weights:
   Bold:
     default: 700
     override: 800
+italic_overrides:
+  seven: curly-serifless-crossbar
 charvars:
   digit-form: old-style
   apl-form: enable
