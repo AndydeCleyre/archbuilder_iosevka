@@ -33,7 +33,8 @@ custom_weights:
     default: 700
     override: 800
 italic_overrides:
-  seven: curly-serifless-crossbar
+  {}
+  # seven: curly-serifless-crossbar
 charvars:
   digit-form: old-style
   apl-form: enable
