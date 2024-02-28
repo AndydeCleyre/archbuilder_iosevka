@@ -124,10 +124,10 @@ charvars:
   cyrl-ya: straight-tailed-motion-serifed
   zero: diamond-unslashed
   one: no-base
-  two: curly-neck
-  three: flat-top
-  four: semi-open
-  five: oblique-arched
+  two: curly-neck-serifless
+  three: flat-top-serifless
+  four: semi-open-serifless
+  five: oblique-arched-serifless
   six: open-contour
   seven: curly-serifless
   eight: crossing-asymmetric
