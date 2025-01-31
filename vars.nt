@@ -2,7 +2,7 @@ build:
   # Uncomment the ones you wish to build:
   - ttf-iosevka-custom-git
   - ttf-iosevka-term-custom-git
-  - ttf-iosevka-quasi-proportional-custom-git
+  # - ttf-iosevka-quasi-proportional-custom-git
   # - ttf-iosevka-git
   # - ttf-iosevka-fixed-custom-git
   # - ttf-iosevka-fontconfig-mono-custom-git
@@ -34,8 +34,8 @@ spacings:
 branch: dev
 build_webfonts: no
 contextual_widths: yes
-use_custom_name: no
-custom_name: Andysevka
+use_custom_name: yes
+custom_name: CodeSaverSevka
 use_custom_weights: yes
 custom_weights:
   Regular:
@@ -49,58 +49,58 @@ italic_overrides:
   # or none:
   {}
 charvars:
-  digit-form: old-style
+  digit-form: lining
   apl-form: enable
-  capital-a: curly-serifless
-  capital-b: standard-interrupted-bilateral-serifed
+  capital-a: straight-serifless
+  capital-b: standard-serifless
   capital-c: serifless
-  capital-d: more-rounded-unilateral-serifed
+  capital-d: more-rounded-serifless
   capital-e: serifless
-  capital-f: top-left-serifed
-  capital-g: toothless-corner-serifless-hooked
+  capital-f: serifless
+  capital-g: toothed-serifless-hooked
   capital-h: serifless
-  capital-i: short-serifed
-  capital-j: serifless
-  capital-k: curly-top-left-serifed
+  capital-i: serifed
+  capital-j: serifed
+  capital-k: straight-serifless
   capital-l: serifless
-  capital-m: hanging-motion-serifed
+  capital-m: hanging-serifless
   capital-n: standard-serifless
-  capital-p: closed-motion-serifed
-  capital-q: open-swash
-  capital-r: straight-open-serifless
+  capital-p: closed-serifless
+  capital-q: curly-tailed
+  capital-r: straight-serifless
   capital-s: serifless
   capital-t: serifless
   capital-u: toothless-rounded-serifless
-  capital-v: curly-serifless
-  capital-w: straight-asymmetric-serifless
-  capital-x: curly-serifless
-  capital-y: curly-serifless
-  capital-z: straight-serifless-with-crossbar
-  a: double-storey-tailed
-  b: toothless-corner-serifless
+  capital-v: straight-serifless
+  capital-w: straight-serifless
+  capital-x: straight-serifless
+  capital-y: straight-serifless
+  capital-z: straight-serifless
+  a: double-storey-serifless
+  b: toothed-serifless
   c: serifless
-  d: tailed-serifless
-  e: rounded
-  f: flat-hook-tailed
-  g: double-storey-open
+  d: toothed-serifless
+  e: flat-crossbar
+  f: serifless-crossbar-at-x-height
+  g: single-storey-serifless
   h: straight-serifless
-  i: hooky
-  j: serifless
-  k: curly-serifless
-  l: flat-tailed
-  m: short-leg-serifless
-  n: earless-corner-tailed-serifless
-  p: eared-motion-serifed
-  q: earless-corner-diagonal-tailed-serifless
-  r: corner-hooked-serifless
+  i: serifed
+  j: serifed
+  k: straight-serifless
+  l: tailed-serifed
+  m: serifless
+  n: straight-serifless
+  p: eared-serifless
+  q: straight-serifless
+  r: serifless
   s: serifless
-  t: bent-hook
-  u: toothless-rounded-serifless
-  v: curly-serifless
-  w: cursive-serifless
-  x: curly-serifless
-  y: curly-serifless
-  z: straight-serifless-with-crossbar
+  t: bent-hook-short-neck2
+  u: toothed-serifless
+  v: straight-serifless
+  w: straight-flat-top-serifless
+  x: straight-serifless
+  y: straight-turn-serifless
+  z: straight-serifless
   capital-eszet: flat-top-serifed
   long-s: flat-hook-tailed
   eszet: longs-s-lig-tailed-serifless
@@ -149,36 +149,36 @@ charvars:
   cyrl-e: serifless
   cyrl-capital-ya: straight-motion-serifed
   cyrl-ya: straight-tailed-motion-serifed
-  zero: diamond-unslashed
-  one: no-base
+  zero: tall-slashed
+  one: no-base-long-top-serif
   two: curly-neck-serifless
   three: flat-top-serifless
   four: semi-open-serifless
   five: oblique-arched-serifless
   six: open-contour
-  seven: curly-serifless
+  seven: bend-serifless
   eight: crossing-asymmetric
-  nine: straight-bar
+  nine: open-contour
   tittle: round
   diacritic-dot: round
   punctuation-dot: round
   braille-dot: round
   tilde: low
-  asterisk: turn-hex-high
+  asterisk: hex-mid
   underscore: high
-  caret: high
+  caret: medium
   paren: normal
-  brace: curly
+  brace: straight
   number-sign: slanted
-  ampersand: flat-top
-  at: fourfold-solid-inner-tall
-  dollar: slanted-interrupted-cap
+  ampersand: closed
+  at: threefold
+  dollar: through-cap
   percent: rings-segmented-slash
   bar: natural-slope
-  ascii-single-quote: raised-comma
+  ascii-single-quote: straight
   ascii-grave: straight
-  question: smooth
-  pilcrow: low
+  question: corner
+  pilcrow: high
   cent: slanted-bar-interrupted-cap
   partial-derivative: curly-bar
   micro-sign: toothed-serifless
