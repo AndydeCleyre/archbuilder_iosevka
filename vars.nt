@@ -11,9 +11,9 @@ extra_widths:
   # Uncomment the ones you wish to build:
   # - condensed
   # - semi-condensed
-  - semi-extended
+  # - semi-extended
   - extended
-  # - extra-extended
+  - extra-extended
   # - ultra-extended
   # or none:
   # []
@@ -36,7 +36,7 @@ build_webfonts: no
 contextual_widths: yes
 use_custom_name: yes
 custom_name: CodeSaverSevka
-use_custom_weights: yes
+use_custom_weights: no
 custom_weights:
   Regular:
     default: 400
@@ -150,7 +150,7 @@ charvars:
   cyrl-capital-ya: straight-motion-serifed
   cyrl-ya: straight-tailed-motion-serifed
   zero: tall-slashed
-  one: no-base-long-top-serif
+  one: no-base
   two: curly-neck-serifless
   three: flat-top-serifless
   four: semi-open-serifless
