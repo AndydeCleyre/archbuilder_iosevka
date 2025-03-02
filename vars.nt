@@ -113,6 +113,7 @@ charvars:
   lower-gamma: casual
   capital-delta: curly
   lower-delta: rounded
+  lower-theta: oval
   lower-iota: tailed-serifed
   capital-lambda: curly-top-serifed
   lower-lambda: tailed-turn
@@ -125,6 +126,8 @@ charvars:
   lower-phi: cursive
   lower-chi: semi-chancery-straight-serifless
   lower-psi: serifless
+  partial-derivative: curly-bar
+  # ^ unfortunately identical to reflected 6
   cyrl-a: single-storey-earless-corner-tailed
   cyrl-ve: cursive
   cyrl-capital-zhe: curly
