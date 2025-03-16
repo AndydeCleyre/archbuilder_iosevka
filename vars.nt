@@ -34,7 +34,7 @@ spacings:
 branch: dev
 build_webfonts: no
 contextual_widths: yes
-use_custom_name: no
+use_custom_name: yes
 custom_name: Andysevka
 use_custom_weights: yes
 custom_weights:
@@ -62,6 +62,7 @@ charvars:
   capital-i: short-serifed
   capital-j: serifless
   capital-k: curly-top-left-serifed
+  # ^ unfortunately identical to capital kappa
   capital-l: serifless
   capital-m: hanging-motion-serifed
   capital-n: standard-serifless
@@ -113,8 +114,10 @@ charvars:
   lower-gamma: casual
   capital-delta: curly
   lower-delta: rounded
+  lower-eta: earless-rounded-serifed
   lower-theta: oval
   lower-iota: tailed-serifed
+  lower-kappa: curly-full-serifed
   capital-lambda: curly-top-serifed
   lower-lambda: tailed-turn
   lower-mu: tailed-serifless
