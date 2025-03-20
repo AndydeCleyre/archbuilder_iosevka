@@ -34,7 +34,7 @@ spacings:
 branch: dev
 build_webfonts: no
 contextual_widths: yes
-use_custom_name: yes
+use_custom_name: no
 custom_name: Andysevka
 use_custom_weights: yes
 custom_weights:
