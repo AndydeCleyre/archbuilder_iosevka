@@ -51,6 +51,16 @@ italic_overrides:
 charvars:
   digit-form: old-style
   apl-form: enable
+  one: no-base
+  two: curly-neck-serifless
+  three: flat-top-serifless
+  four: semi-open-serifless
+  five: oblique-arched-serifless
+  six: open-contour
+  seven: curly-serifless
+  eight: crossing-asymmetric
+  nine: straight-bar
+  zero: diamond-unslashed
   capital-a: curly-serifless
   capital-b: standard-interrupted-bilateral-serifed
   capital-c: serifless
@@ -155,16 +165,6 @@ charvars:
   cyrl-e: serifless
   cyrl-capital-ya: straight-motion-serifed
   cyrl-ya: straight-tailed-motion-serifed
-  zero: diamond-unslashed
-  one: no-base
-  two: curly-neck-serifless
-  three: flat-top-serifless
-  four: semi-open-serifless
-  five: oblique-arched-serifless
-  six: open-contour
-  seven: curly-serifless
-  eight: crossing-asymmetric
-  nine: straight-bar
   tittle: round
   diacritic-dot: round
   punctuation-dot: round
@@ -173,22 +173,22 @@ charvars:
   asterisk: turn-hex-high
   underscore: high
   caret: high
+  ascii-grave: straight
+  ascii-single-quote: raised-comma
   paren: normal
   brace: curly
+  guillemet: curly
   number-sign: slanted
   ampersand: flat-top
   at: fourfold-solid-inner-tall
   dollar: slanted-interrupted-cap
+  cent: slanted-bar-interrupted-cap
   percent: rings-segmented-slash
   bar: natural-slope
-  ascii-single-quote: raised-comma
-  ascii-grave: straight
   question: smooth
   pilcrow: low
-  cent: slanted-bar-interrupted-cap
   micro-sign: toothed-serifless
   decorative-angle-brackets: middle
-  guillemet: curly
   lig-ltgteq: flat
   lig-neq: slightly-slanted
   lig-equal-chain: with-notch
