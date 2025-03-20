@@ -34,7 +34,7 @@ spacings:
 branch: dev
 build_webfonts: no
 contextual_widths: yes
-use_custom_name: no
+use_custom_name: yes
 custom_name: Andysevka
 use_custom_weights: yes
 custom_weights:
@@ -45,9 +45,28 @@ custom_weights:
     default: 700
     override: 800
 italic_overrides:
-  # seven: curly-serifless-crossbar
+  seven: bend-serifless
+  zero: diamond-slashed-split
+  capital-j: serifless
+  capital-v: curly-serifless
+  capital-y: straight-motion-serifed
+  capital-z: curly-serifless-with-crossbar
+  a: single-storey-top-cut-tailed
+  f: tailed
+  g: single-storey-flat-hook-top-cut
+  h: tailed-serifless
+  i: serifed-flat-tailed
+  j: flat-hook-serifless
+  l: semi-tailed
+  m: short-leg-tailed-serifless
+  r: compact-serifless
+  t: diagonal-tailed
+  u: tailed-serifless
+  x: semi-chancery-curly-serifless
+  y: curly-turn-serifless
+  z: curly-serifless-with-crossbar
   # or none:
-  {}
+  # {}
 charvars:
   digit-form: old-style
   apl-form: enable
