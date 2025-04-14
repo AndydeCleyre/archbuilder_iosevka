@@ -32,7 +32,7 @@ spacings:
   - quasi-proportional-extension-only
   # ^ non-mono without making anything narrower (e.g. "i" is still wide)
 branch: dev
-build_webfonts: no
+build_webfonts: yes
 contextual_widths: yes
 use_custom_name: yes
 custom_name: Andysevka
