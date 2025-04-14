@@ -66,16 +66,20 @@ build () {
 package () {
   install -d "${pkgdir}/usr/share/fonts/TTF"
   install -m644 Iosevka/dist/@{plan}/TTF/*.ttf "${pkgdir}/usr/share/fonts/TTF/"
-@if plan_rename != plan:
-  cd "${pkgdir}/usr/share/fonts/TTF/"
-  for f in *.ttf; do
-    mv "$f" "${f/@{plan}/@{plan_rename}}"
-  done
-  cd "${srcdir}"
-@end
 @if build_webfonts:
+
   install -d "${pkgdir}/usr/share/fonts/WOFF2"
   install -m644 Iosevka/dist/@{plan}/WOFF2/*.woff2 "${pkgdir}/usr/share/fonts/WOFF2/"
+
+  install -d "${pkgdir}/usr/share/fonts/TTF/Unhinted"
+  install -m644 Iosevka/dist/@{plan}/TTF-Unhinted/*.ttf "${pkgdir}/usr/share/fonts/TTF/Unhinted"
+
+  cd "${pkgdir}/usr/share/fonts/TTF/Unhinted"
+  for f in *.ttf; do
+    mv "$f" "${pkgdir}/usr/share/fonts/TTF/${f%.*}-unhinted.ttf"
+  done
+  rmdir "${pkgdir}/usr/share/fonts/TTF/Unhinted"
+  cd "${srcdir}"
 @if plan_rename != plan:
   cd "${pkgdir}/usr/share/fonts/WOFF2/"
   for f in *.woff2; do
@@ -83,9 +87,19 @@ package () {
   done
   cd "${srcdir}"
 @end
+
   printf '%s\n' 'CSS BELOW:'
   cat Iosevka/dist/@{plan}/*.css
   printf '%s\n' 'CSS ABOVE'
+@end
+
+@if plan_rename != plan:
+  cd "${pkgdir}/usr/share/fonts/TTF/"
+  for f in *.ttf; do
+    mv "$f" "${f/@{plan}/@{plan_rename}}"
+  done
+  cd "${srcdir}"
+
 @end
   install -d "${pkgdir}/usr/share/licenses/${pkgname}"
   install -m644 Iosevka/LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/"
