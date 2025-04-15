@@ -1,4 +1,4 @@
-@require(spacing, pbp_sha256, build_webfonts, branch, use_custom_name, custom_name)
+@require(spacing, pbp_sha256, build_webfonts, hinted, branch, use_custom_name, custom_name)
 @(
     name = f"ttf-iosevka-{spacing}-custom"
     if spacing == 'normal':
@@ -60,10 +60,23 @@ build () {
   cd Iosevka
   npm install
   npm update
-  NO_COLOR=1 npm run build -- @{build_webfonts and 'contents' or 'ttf'}::@{plan}
+  @if hinted and build_webfonts:
+  NO_COLOR=1 npm run build -- contents::@{plan}
+  @elif hinted:
+  NO_COLOR=1 npm run build -- ttf::@{plan}
+  @elif build_webfonts:
+  NO_COLOR=1 npm run build -- fonts-unhinted::@{plan}
+  @else:
+  NO_COLOR=1 npm run build -- ttf-unhinted::@{plan}
+  @end
 }
 
 package () {
+  # DEBUGGING:
+  printf '%s\n' 'ANDY LOOK AT THESE PATHS:'
+  ls -l Iosevka/dist/@{plan}/
+  ls -l Iosevka/dist/@{plan}/*
+  #
   install -d "${pkgdir}/usr/share/fonts/TTF"
   install -m644 Iosevka/dist/@{plan}/TTF/*.ttf "${pkgdir}/usr/share/fonts/TTF/"
 @if build_webfonts:
@@ -73,14 +86,8 @@ package () {
 
   install -d "${pkgdir}/usr/share/fonts/TTF/Unhinted"
   install -m644 Iosevka/dist/@{plan}/TTF-Unhinted/*.ttf "${pkgdir}/usr/share/fonts/TTF/Unhinted"
-
-  cd "${pkgdir}/usr/share/fonts/TTF/Unhinted"
-  for f in *.ttf; do
-    mv "$f" "${pkgdir}/usr/share/fonts/TTF/${f%.*}-unhinted.ttf"
-  done
-  rmdir "${pkgdir}/usr/share/fonts/TTF/Unhinted"
-  cd "${srcdir}"
 @if plan_rename != plan:
+
   cd "${pkgdir}/usr/share/fonts/WOFF2/"
   for f in *.woff2; do
     mv "$f" "${f/@{plan}/@{plan_rename}}"

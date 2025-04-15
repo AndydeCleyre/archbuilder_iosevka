@@ -32,6 +32,7 @@ spacings:
   - quasi-proportional-extension-only
   # ^ non-mono without making anything narrower (e.g. "i" is still wide)
 branch: dev
+hinted: no
 build_webfonts: yes
 contextual_widths: yes
 use_custom_name: yes

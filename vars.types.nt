@@ -1,5 +1,6 @@
 boolean:
   - build_webfonts
   - contextual_widths
+  - hinted
   - use_custom_name
   - use_custom_weights
