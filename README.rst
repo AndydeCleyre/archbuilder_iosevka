@@ -57,7 +57,7 @@ or using GitHub's CLI_:
 
    $ gh run watch
 
-After anywhere from 30-120+ minutes you can
+After anywhere from 5-120+ minutes you can
 get the built font from your ``Releases`` page, or:
 
 .. code:: console
