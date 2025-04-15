@@ -1,6 +1,6 @@
 build:
   # Uncomment the ones you wish to build:
-  - ttf-iosevka-custom-git
+  # - ttf-iosevka-custom-git
   - ttf-iosevka-term-custom-git
   - ttf-iosevka-quasi-proportional-custom-git
   # - ttf-iosevka-git
@@ -11,12 +11,12 @@ extra_widths:
   # Uncomment the ones you wish to build:
   # - condensed
   # - semi-condensed
-  - semi-extended
-  - extended
+  # - semi-extended
+  # - extended
   # - extra-extended
   # - ultra-extended
   # or none:
-  # []
+  []
 spacings:
   # No need to change this list
   - normal
@@ -32,6 +32,7 @@ spacings:
   - quasi-proportional-extension-only
   # ^ non-mono without making anything narrower (e.g. "i" is still wide)
 branch: dev
+hinted: no
 build_webfonts: yes
 contextual_widths: yes
 use_custom_name: yes

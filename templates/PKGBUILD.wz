@@ -1,4 +1,4 @@
-@require(spacing, pbp_sha256, build_webfonts, branch, use_custom_name, custom_name)
+@require(spacing, pbp_sha256, build_webfonts, hinted, branch, use_custom_name, custom_name)
 @(
     name = f"ttf-iosevka-{spacing}-custom"
     if spacing == 'normal':
@@ -17,6 +17,15 @@
     if use_custom_name:
         import re
         plan_rename = re.sub(r'Iosevka(.*)Custom', custom_name.replace(' ', '') + r'\1', plan)
+
+    if hinted and build_webfonts:
+        target = 'contents'
+    elif hinted:
+        target = 'ttf'
+    elif build_webfonts:
+        target = 'fonts-unhinted'
+    else:
+        target = 'ttf-unhinted'
 )\
 # Maintainer: Andy Kluger <https://t.me/andykluger>
 # Contributor: Markus Weimar <mail@@markusweimar.de>
@@ -60,32 +69,37 @@ build () {
   cd Iosevka
   npm install
   npm update
-  NO_COLOR=1 npm run build -- @{build_webfonts and 'contents' or 'ttf'}::@{plan}
+  NO_COLOR=1 npm run build -- @{target}::@{plan}
 }
 
 package () {
   install -d "${pkgdir}/usr/share/fonts/TTF"
-  install -m644 Iosevka/dist/@{plan}/TTF/*.ttf "${pkgdir}/usr/share/fonts/TTF/"
-@if plan_rename != plan:
-  cd "${pkgdir}/usr/share/fonts/TTF/"
-  for f in *.ttf; do
-    mv "$f" "${f/@{plan}/@{plan_rename}}"
-  done
-  cd "${srcdir}"
-@end
+  install -m644 Iosevka/dist/@{plan}/TTF@{'-Unhinted' if not hinted else ''}/*.ttf "${pkgdir}/usr/share/fonts/TTF/"
 @if build_webfonts:
+
   install -d "${pkgdir}/usr/share/fonts/WOFF2"
-  install -m644 Iosevka/dist/@{plan}/WOFF2/*.woff2 "${pkgdir}/usr/share/fonts/WOFF2/"
+  install -m644 Iosevka/dist/@{plan}/WOFF2@{'-Unhinted' if not hinted else ''}/*.woff2 "${pkgdir}/usr/share/fonts/WOFF2/"
 @if plan_rename != plan:
+
   cd "${pkgdir}/usr/share/fonts/WOFF2/"
   for f in *.woff2; do
     mv "$f" "${f/@{plan}/@{plan_rename}}"
   done
   cd "${srcdir}"
 @end
+
   printf '%s\n' 'CSS BELOW:'
   cat Iosevka/dist/@{plan}/*.css
   printf '%s\n' 'CSS ABOVE'
+@end
+
+@if plan_rename != plan:
+  cd "${pkgdir}/usr/share/fonts/TTF/"
+  for f in *.ttf; do
+    mv "$f" "${f/@{plan}/@{plan_rename}}"
+  done
+  cd "${srcdir}"
+
 @end
   install -d "${pkgdir}/usr/share/licenses/${pkgname}"
   install -m644 Iosevka/LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/"
