@@ -44,7 +44,7 @@ custom_weights:
     override: 600
   Bold:
     default: 700
-    override: 800
+    override: 850
 italic_overrides:
   seven: bend-serifless
   zero: diamond-slashed-split
