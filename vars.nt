@@ -39,6 +39,7 @@ use_custom_name: yes
 custom_name: Andysevka
 use_custom_weights: yes
 custom_weights:
+  # Change only the override values, leaving the default values alone:
   Regular:
     default: 400
     override: 600
