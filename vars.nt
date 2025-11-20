@@ -1,8 +1,8 @@
 build:
   # Uncomment the ones you wish to build:
   # - ttf-iosevka-custom-git
-  - ttf-iosevka-term-custom-git
-  - ttf-iosevka-quasi-proportional-custom-git
+  # - ttf-iosevka-term-custom-git
+  # - ttf-iosevka-quasi-proportional-custom-git
   # - ttf-iosevka-git
   - ttf-iosevka-fixed-custom-git
   # - ttf-iosevka-fontconfig-mono-custom-git
@@ -36,7 +36,7 @@ hinted: no
 build_webfonts: yes
 contextual_widths: yes
 use_custom_name: yes
-custom_name: Andysevka
+custom_name: AndysevkaConsole
 use_custom_weights: yes
 custom_weights:
   # Change only the override values, leaving the default values alone:
@@ -48,9 +48,6 @@ custom_weights:
     override: 850
 italic_overrides:
   seven: bend-serifless
-  zero: diamond-slashed-split
-  capital-j: serifless
-  capital-v: curly-serifless
   capital-y: straight-motion-serifed
   capital-z: curly-serifless-with-crossbar
   a: single-storey-top-cut-tailed
@@ -76,13 +73,13 @@ charvars:
   two: curly-neck-serifless
   three: flat-top-serifless
   four: semi-open-serifless
-  five: oblique-arched-serifless
+  five: upright-flat-serifless
   six: open-contour
   seven: curly-serifless
   eight: crossing-asymmetric
   nine: straight-bar
-  zero: diamond-unslashed
-  capital-a: curly-serifless
+  zero: oval-dotted
+  capital-a: round-top-serifless
   capital-b: standard-interrupted-bilateral-serifed
   capital-c: serifless
   capital-d: more-rounded-unilateral-serifed
@@ -104,7 +101,7 @@ charvars:
   capital-t: serifless
   capital-u: toothless-rounded-serifless
   capital-v: curly-serifless
-  capital-w: straight-asymmetric-serifless
+  capital-w: rounded-vertical-sides-serifless
   capital-x: curly-serifless
   capital-y: curly-serifless
   capital-z: straight-serifless-with-crossbar
@@ -112,7 +109,7 @@ charvars:
   b: toothless-corner-serifless
   c: serifless
   d: tailed-serifless
-  e: rounded
+  e: flat-crossbar
   f: flat-hook-tailed
   g: double-storey-open
   h: straight-serifless
@@ -129,10 +126,10 @@ charvars:
   t: bent-hook
   u: toothless-rounded-serifless
   v: curly-serifless
-  w: cursive-serifless
+  w: rounded-vertical-sides-serifless
   x: curly-serifless
   y: curly-serifless
-  z: straight-serifless-with-crossbar
+  z: straight-serifless
   capital-eszet: flat-top-serifed
   long-s: flat-hook-tailed
   eszet: longs-s-lig-tailed-serifless
@@ -199,9 +196,9 @@ charvars:
   paren: normal
   brace: curly
   guillemet: curly
-  number-sign: slanted
+  number-sign: upright
   ampersand: flat-top
-  at: fourfold-solid-inner-tall
+  at: fourfold-solid-inner
   dollar: slanted-interrupted-cap
   cent: slanted-bar-interrupted-cap
   percent: rings-segmented-slash
