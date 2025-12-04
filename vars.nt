@@ -48,6 +48,9 @@ custom_weights:
     override: 850
 italic_overrides:
   seven: bend-serifless
+  zero: oval-slashed
+  capital-j: serifless
+  capital-v: curly-serifless
   capital-y: straight-motion-serifed
   capital-z: curly-serifless-with-crossbar
   a: single-storey-top-cut-tailed
@@ -116,7 +119,7 @@ charvars:
   i: hooky
   j: serifless
   k: curly-serifless
-  l: flat-tailed
+  l: semi-tailed
   m: short-leg-serifless
   n: earless-corner-tailed-serifless
   p: eared-motion-serifed
@@ -211,5 +214,6 @@ charvars:
   lig-neq: slightly-slanted
   lig-equal-chain: with-notch
   lig-hyphen-chain: with-notch
+  lig-plus-chain: with-notch
   lig-double-arrow-bar: with-notch
   lig-single-arrow-bar: with-notch
