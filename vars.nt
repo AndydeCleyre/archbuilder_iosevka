@@ -214,5 +214,6 @@ charvars:
   lig-neq: slightly-slanted
   lig-equal-chain: with-notch
   lig-hyphen-chain: with-notch
+  lig-plus-chain: with-notch
   lig-double-arrow-bar: with-notch
   lig-single-arrow-bar: with-notch
