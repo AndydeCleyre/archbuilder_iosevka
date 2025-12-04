@@ -31,24 +31,58 @@ spacings:
   # ^ non-mono
   - quasi-proportional-extension-only
   # ^ non-mono without making anything narrower (e.g. "i" is still wide)
+branch: dev
+hinted: no
+# TODO: would hinting matter here?
 build_webfonts: no
-use_custom_weights: yes
 contextual_widths: yes
-branch: main
+use_custom_name: yes
+custom_name: ColorCodeBot
+use_custom_weights: yes
 custom_weights:
+  # Change only the override values, leaving the default values alone:
   Regular:
     default: 400
     override: 600
   Bold:
     default: 700
-    override: 800
+    override: 850
 italic_overrides:
-  # seven: curly-serifless-crossbar
+  seven: bend-serifless
+  zero: diamond-slashed
+  capital-j: serifless
+  capital-v: curly-serifless
+  capital-y: straight-motion-serifed
+  capital-z: curly-serifless-with-crossbar
+  a: single-storey-top-cut-tailed
+  f: tailed
+  g: single-storey-flat-hook-top-cut
+  h: tailed-serifless
+  i: serifed-flat-tailed
+  j: flat-hook-serifless
+  l: semi-tailed
+  m: short-leg-tailed-serifless
+  r: compact-serifless
+  t: diagonal-tailed
+  u: tailed-serifless
+  x: semi-chancery-curly-serifless
+  y: curly-turn-serifless
+  z: curly-serifless-with-crossbar
   # or none:
-  {}
+  # {}
 charvars:
   digit-form: old-style
   apl-form: enable
+  one: no-base
+  two: curly-neck-serifless
+  three: flat-top-serifless
+  four: semi-open-serifless
+  five: oblique-arched-serifless
+  six: open-contour
+  seven: curly-serifless
+  eight: crossing-asymmetric
+  nine: straight-bar
+  zero: diamond-slashed-split
   capital-a: curly-serifless
   capital-b: standard-interrupted-bilateral-serifed
   capital-c: serifless
@@ -60,6 +94,7 @@ charvars:
   capital-i: short-serifed
   capital-j: serifless
   capital-k: curly-top-left-serifed
+  # ^ unfortunately identical to capital kappa
   capital-l: serifless
   capital-m: hanging-motion-serifed
   capital-n: standard-serifless
@@ -85,7 +120,7 @@ charvars:
   i: hooky
   j: serifless
   k: curly-serifless
-  l: flat-tailed
+  l: semi-tailed
   m: short-leg-serifless
   n: earless-corner-tailed-serifless
   p: eared-motion-serifed
@@ -111,7 +146,10 @@ charvars:
   lower-gamma: casual
   capital-delta: curly
   lower-delta: rounded
+  lower-eta: earless-rounded-serifed
+  lower-theta: oval
   lower-iota: tailed-serifed
+  lower-kappa: curly-full-serifed
   capital-lambda: curly-top-serifed
   lower-lambda: tailed-turn
   lower-mu: tailed-serifless
@@ -123,6 +161,8 @@ charvars:
   lower-phi: cursive
   lower-chi: semi-chancery-straight-serifless
   lower-psi: serifless
+  partial-derivative: curly-bar
+  # ^ unfortunately identical to reflected 6
   cyrl-a: single-storey-earless-corner-tailed
   cyrl-ve: cursive
   cyrl-capital-zhe: curly
@@ -147,16 +187,6 @@ charvars:
   cyrl-e: serifless
   cyrl-capital-ya: straight-motion-serifed
   cyrl-ya: straight-tailed-motion-serifed
-  zero: diamond-unslashed
-  one: no-base
-  two: curly-neck-serifless
-  three: flat-top-serifless
-  four: semi-open-serifless
-  five: oblique-arched-serifless
-  six: open-contour
-  seven: curly-serifless
-  eight: crossing-asymmetric
-  nine: straight-bar
   tittle: round
   diacritic-dot: round
   punctuation-dot: round
@@ -165,25 +195,26 @@ charvars:
   asterisk: turn-hex-high
   underscore: high
   caret: high
+  ascii-grave: straight
+  ascii-single-quote: straight
   paren: normal
   brace: curly
+  guillemet: curly
   number-sign: slanted
   ampersand: flat-top
   at: fourfold-solid-inner-tall
   dollar: slanted-interrupted-cap
+  cent: slanted-bar-interrupted-cap
   percent: rings-segmented-slash
   bar: natural-slope
-  ascii-single-quote: straight
-  ascii-grave: straight
   question: smooth
   pilcrow: low
-  cent: slanted-bar-interrupted-cap
-  partial-derivative: curly-bar
   micro-sign: toothed-serifless
-  guillemet: curly
+  decorative-angle-brackets: middle
   lig-ltgteq: flat
   lig-neq: slightly-slanted
   lig-equal-chain: with-notch
   lig-hyphen-chain: with-notch
+  lig-plus-chain: with-notch
   lig-double-arrow-bar: with-notch
   lig-single-arrow-bar: with-notch

@@ -28,13 +28,11 @@ fork this repo on GitHub, then:
      $ git clone <your-github-fork>
      $ cd archbuilder_iosevka
 
-- configure your font (see the `character variants`_), either by editing ``vars.nt``:
-
-  .. code:: console
-
-     $ $EDITOR vars.nt
-
+- configure your font, either by editing ``vars.nt``,
   or by `Using the Customizer Site`_.
+
+  If editing ``vars.nt``, look through all the options,
+  and reference the `character variants`_.
 
 - generate your new workflow:
 
@@ -57,7 +55,7 @@ or using GitHub's CLI_:
 
    $ gh run watch
 
-After anywhere from 30-120+ minutes you can
+After anywhere from 5-120+ minutes you can
 get the built font from your ``Releases`` page, or:
 
 .. code:: console
@@ -73,20 +71,12 @@ To use a configuration thus generated with this builder:
 
 - in the customizer, leave the default Family Name ("Iosevka Custom")
 - save the generated configuration as ``templates/private-build-plans.toml.wz``
-- in ``vars.nt``'s ``build`` list, ensure the only uncommented item is ``ttf-iosevka-custom-git``,
-  with either an editor:
+- in ``vars.nt``:
 
-  .. code:: console
-
-     $ $EDITOR vars.nt
-
-  or NestedTextTo and yamlpath's ``yaml-merge``:
-
-  .. code:: console
-
-     $ nt2yaml vars.nt >vars.yml
-     $ yaml-merge -A right -w vars.yml vars.yml <<<'{"build": ["ttf-iosevka-custom-git"]}'
-     $ yaml2nt vars.yml >vars.nt
+  - in the ``build`` list, ensure the only uncommented item is ``ttf-iosevka-custom-git``
+  - set ``use_custom_name`` to ``no``
+  - set ``hinted`` and ``build_webfonts`` as desired
+  - other options will be ignored
 
 
 .. _Iosevka: https://github.com/be5invis/Iosevka/

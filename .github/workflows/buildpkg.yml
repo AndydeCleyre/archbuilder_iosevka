@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: true
 
@@ -26,12 +26,11 @@ jobs:
           buildah run ctnr useradd -m dev
           buildah run ctnr sh -c 'printf "%s\n" "dev ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers.d/dev'
 
-      - name: build and install AUR dep ttfautohint
+      - name: build and install AUR dep ttfautohint-cli
         run: |
           buildah config -u dev ctnr
-          buildah run ctnr gpg --keyserver keyserver.ubuntu.com --recv-keys 58E0C111E39F5408C5D3EC76C1A60EACE707FDA5
-          buildah run ctnr git clone https://aur.archlinux.org/ttfautohint /home/dev/ttfautohint
-          buildah config --workingdir /home/dev/ttfautohint ctnr
+          buildah run ctnr git clone https://aur.archlinux.org/ttfautohint-cli /home/dev/ttfautohint-cli
+          buildah config --workingdir /home/dev/ttfautohint-cli ctnr
           buildah run ctnr makepkg --noconfirm -si
 
       - name: render PKGBUILDs
@@ -62,7 +61,7 @@ jobs:
           printf '%s\n' '```' >>release.md
 
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: ${{ runner.temp }}/dist/*
           fail_on_unmatched_files: true
