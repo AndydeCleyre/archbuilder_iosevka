@@ -48,7 +48,7 @@ custom_weights:
     override: 850
 italic_overrides:
   seven: bend-serifless
-  zero: diamond-slashed-split
+  zero: diamond-slashed
   capital-j: serifless
   capital-v: curly-serifless
   capital-y: straight-motion-serifed
@@ -81,7 +81,7 @@ charvars:
   seven: curly-serifless
   eight: crossing-asymmetric
   nine: straight-bar
-  zero: diamond-unslashed
+  zero: diamond-slashed-split
   capital-a: curly-serifless
   capital-b: standard-interrupted-bilateral-serifed
   capital-c: serifless
