@@ -14,5 +14,5 @@ ruamel-yaml==0.17.21      # via nt2, yamlpath
 six==1.17.0               # via inform, python-dateutil
 typing-extensions==4.15.0  # via cattrs
 tzdata==2025.3            # via arrow
-wheezy-template==3.2.4    # via -r requirements.in
+wheezy-template==3.2.5    # via -r requirements.in
 yamlpath==3.8.2           # via nt2, -r requirements.in
