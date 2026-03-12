@@ -1,6 +1,10 @@
-@require(charvars, italic_overrides, spacings, custom_weights, use_custom_weights, contextual_widths, extra_widths, use_custom_name, custom_name)
+@require(charvars, italic_overrides, spacings, custom_weights, use_custom_weights, contextual_widths, extra_widths, use_custom_name, custom_name, exclude_char_ranges)
 @(
     contextual_widths = str(contextual_widths).lower()
+    exclude_chars = exclude_char_ranges and ', '.join(
+        ', '.join(str(ucode) for ucode in r).join('[]')
+        for r in exclude_char_ranges
+    ).join('[]') or ''
 )\
 @for spacing in spacings:
 @(
@@ -31,10 +35,12 @@ noCvSs = true
 exportGlyphNames = false
 buildTextureFeature = @contextual_widths
 
+@if exclude_chars:
 # Let emoji/fallback fonts handle these
-# [buildPlans.@{plan}.subset.exclude]
-# ranges = [[0x1f1e6, 0x1f1ff]]
+[buildPlans.@{plan}.subset.exclude]
+ranges = @exclude_chars
 
+@end
 # [buildPlans.@{plan}.variants]
 # inherits = "ss16"
 

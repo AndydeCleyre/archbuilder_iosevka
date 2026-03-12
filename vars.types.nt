@@ -4,3 +4,5 @@ boolean:
   - hinted
   - use_custom_name
   - use_custom_weights
+number:
+  - exclude_char_ranges.*.*
