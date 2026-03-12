@@ -42,7 +42,7 @@ custom_weights:
   # Change only the override values, leaving the default values alone:
   Regular:
     default: 400
-    override: 600
+    override: 500
   Bold:
     default: 700
     override: 850
