@@ -9,10 +9,10 @@ nt2==0.2.7                # via -r requirements.in
 plumbum==1.10.0           # via nt2
 pygments==2.20.0          # via rich
 python-dateutil==2.9.0.post0  # via arrow, yamlpath
-rich==14.3.4              # via nt2
-ruamel-yaml==0.17.21      # via nt2, yamlpath
+rich==15.0.0              # via nt2
+ruamel-yaml==0.19.1       # via nt2, yamlpath
 six==1.17.0               # via inform, python-dateutil
 typing-extensions==4.15.0  # via cattrs
 tzdata==2026.1            # via arrow
 wheezy-template==3.2.5    # via -r requirements.in
-yamlpath==3.8.2           # via nt2, -r requirements.in
+yamlpath==3.9.0           # via nt2, -r requirements.in
