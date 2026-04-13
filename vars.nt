@@ -51,11 +51,11 @@ exclude_char_ranges:
   #   [startcodepoint1, endcodepoint1]
   # -
   #   [startcodepoint2, endcodepoint2]
-  -
-    [0xf0ae]
+  # -
+  #   [0xf0ae]
     # 
   # or none:
-  # []
+  []
 italic_overrides:
   seven: bend-serifless
   zero: oval-slashed
