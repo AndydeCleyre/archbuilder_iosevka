@@ -200,6 +200,7 @@ charvars:
   diacritic-dot: round
   punctuation-dot: round
   braille-dot: round
+  ellipsis-density: normal
   tilde: low
   asterisk: turn-hex-high
   underscore: high
