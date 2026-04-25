@@ -13,6 +13,6 @@ rich==15.0.0              # via nt2
 ruamel-yaml==0.19.1       # via nt2, yamlpath
 six==1.17.0               # via inform, python-dateutil
 typing-extensions==4.15.0  # via cattrs
-tzdata==2026.1            # via arrow
+tzdata==2026.2            # via arrow
 wheezy-template==3.2.5    # via -r requirements.in
 yamlpath==3.9.0           # via nt2, -r requirements.in
