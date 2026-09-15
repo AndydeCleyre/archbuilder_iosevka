@@ -10,6 +10,10 @@ The built package can be installed on Arch Linux with ``sudo pacman -U``,
 or you can simply extract the fonts with your favorite archive tool for use on
 any system.
 
+Note that there is now an official alternative to this:
+
+https://github.com/be5invis/iosevka-custom-build-demo
+
 .. contents::
    :depth: 1
 
