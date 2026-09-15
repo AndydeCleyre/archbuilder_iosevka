@@ -1,5 +1,5 @@
 __pycache__
-/venv
+/.venv
 /private-build-plans.toml
 /pkgs/*-custom-git
 /*.pkg.*

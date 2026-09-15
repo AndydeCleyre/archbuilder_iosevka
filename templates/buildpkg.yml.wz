@@ -9,75 +9,63 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@@v2
+      - uses: actions/checkout@@v4
         with:
           submodules: true
 
       - name: create and update build ctnr from official repos
         run: |
-          buildah from --name ctnr archlinux
+          buildah from --name ctnr docker.io/library/archlinux:base-devel
+          buildah copy ctnr 'https://archlinux.org/mirrorlist/?country=US&protocol=https&ip_version=4&ip_version=6&use_mirror_status=on' /tmp/mirrorlist
+          buildah run ctnr sh -c "sed 's/^#Server =/Server =/g' /tmp/mirrorlist | shuf >/etc/pacman.d/mirrorlist"
+          buildah run ctnr chmod 0644 /etc/pacman.d/mirrorlist
           buildah run ctnr pacman --noconfirm -Syu
-          buildah run ctnr pacman --noconfirm -S --needed base-devel git
+          buildah run ctnr pacman --noconfirm -S --needed git
 
       - name: add non-root user to build ctnr
         run: |
           buildah run ctnr useradd -m dev
           buildah run ctnr sh -c 'printf "%s\n" "dev ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers.d/dev'
 
-      - name: build and install AUR dep ttfautohint
+      - name: build and install AUR dep ttfautohint-cli
         run: |
           buildah config -u dev ctnr
-          buildah run ctnr gpg --keyserver keys.gnupg.net --recv-keys 58E0C111E39F5408C5D3EC76C1A60EACE707FDA5
-          buildah run ctnr git clone https://aur.archlinux.org/ttfautohint /home/dev/ttfautohint
-          buildah config --workingdir /home/dev/ttfautohint ctnr
+          buildah run ctnr git clone https://aur.archlinux.org/ttfautohint-cli /home/dev/ttfautohint-cli
+          buildah config --workingdir /home/dev/ttfautohint-cli ctnr
           buildah run ctnr makepkg --noconfirm -si
-
-      - name: install templating tools
-        run: |
-          python3 -m pip install -U pip setuptools wheel
-          python3 -m pip install -r requirements.txt
-          printf '%s\n' "$HOME/.local/bin" >>$GITHUB_PATH
 
       - name: render PKGBUILDs
         run: ./mk/pkgbuilds.sh
-
-      - name: create release
-        id: create_release
-        uses: actions/create-release@@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
 
 @for pkgname in build:
       - name: copy @pkgname PKGBUILD into build ctnr
         run: |
           buildah copy --chown dev ctnr pkgs/@pkgname /home/dev/@pkgname
 
-      - name: build and siphon @pkgname from build ctnr, setting PKG to artifact filename
+      - name: build and siphon @pkgname from build ctnr
         run: |
           buildah config -u dev --workingdir /home/dev/@pkgname ctnr
           buildah run ctnr makepkg --noconfirm -s
 
-          buildah run ctnr ls -l
+          buildah run ctnr ls -lh
 
           pkg="$(buildah run ctnr sh -c "printf '%s\n' *.pkg.*")"
-          buildah run ctnr cat "$pkg" >"$pkg"
+          mkdir -p "${RUNNER_TEMP}/dist"
+          buildah run ctnr cat "$pkg" >"${RUNNER_TEMP}/dist/${pkg}"
 
-          printf '%s\n' "PKG=$pkg" >>$GITHUB_ENV
-
-      - name: upload pkg as release asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ env.PKG }}
-          asset_name: ${{ env.PKG }}
-          asset_content_type: application/zip
+          printf '%s\n' "${RUNNER_TEMP}/dist/"
+          ls -lh "${RUNNER_TEMP}/dist/"
 
 @end
+      - name: make release notes
+        run: |
+          printf '%s\n' '`vars.nt`:' '```yaml' >release.md
+          cat vars.nt >>release.md
+          printf '%s\n' '```' >>release.md
+
+      - name: Release
+        uses: softprops/action-gh-release@@v2
+        with:
+          files: ${{ runner.temp }}/dist/*
+          fail_on_unmatched_files: true
+          body_path: release.md

@@ -1,0 +1,230 @@
+build:
+  # Uncomment the ones you wish to build:
+  # - ttf-iosevka-custom-git
+  - ttf-iosevka-term-custom-git
+  # - ttf-iosevka-quasi-proportional-custom-git
+  # - ttf-iosevka-git
+  # - ttf-iosevka-fixed-custom-git
+  # - ttf-iosevka-fontconfig-mono-custom-git
+  # - ttf-iosevka-quasi-proportional-extension-only-custom-git
+extra_widths:
+  # Uncomment the ones you wish to build:
+  # - condensed
+  # - semi-condensed
+  # - semi-extended
+  # - extended
+  # - extra-extended
+  # - ultra-extended
+  # or none:
+  []
+spacings:
+  # No need to change this list
+  - normal
+  # ^ some wide glyphs
+  - term
+  # ^ fewer wide glyphs
+  - fontconfig-mono
+  # ^ no wide glyphs
+  - fixed
+  # ^ neither wide glyphs nor ligatures
+  - quasi-proportional
+  # ^ non-mono
+  - quasi-proportional-extension-only
+  # ^ non-mono without making anything narrower (e.g. "i" is still wide)
+branch: dev
+hinted: no
+build_webfonts: no
+contextual_widths: yes
+use_custom_name: no
+custom_name: Somethingsevka
+use_custom_weights: no
+custom_weights:
+  # Change only the override values, leaving the default values alone:
+  Regular:
+    default: 400
+    override: 600
+  Bold:
+    default: 700
+    override: 850
+exclude_char_ranges:
+  # -
+  #   [startcodepoint1, endcodepoint1]
+  # -
+  #   [startcodepoint2, endcodepoint2]
+  # -
+  #   [0xf0ae]
+    # 
+  # or none:
+  []
+italic_overrides:
+#   seven: bend-serifless
+#   zero: diamond-slashed
+#   capital-j: serifless
+#   capital-v: curly-serifless
+#   capital-y: straight-motion-serifed
+#   capital-z: curly-serifless-with-crossbar
+#   a: single-storey-flat-top-tailed-serifed
+#   f: tailed
+#   g: single-storey-flat-hook-top-cut
+#   h: tailed-serifless
+#   i: serifed-flat-tailed
+#   j: flat-hook-serifless
+#   l: semi-tailed
+#   m: short-leg-tailed-serifless
+#   r: compact-serifless
+#   t: diagonal-tailed
+#   u: tailed-serifless
+#   x: semi-chancery-curly-serifless
+#   y: curly-turn-serifless
+#   z: curly-serifless-with-crossbar
+  # or none:
+  {}
+charvars:
+  digit-form: old-style
+  apl-form: enable
+  one: no-base
+  two: curly-neck-serifless
+  three: flat-top-serifless
+  four: semi-open-serifless
+  five: oblique-flat-hook-serifless
+  six: open-contour
+  seven: curly-serifless
+  eight: crossing-asymmetric
+  nine: straight-bar
+  zero: diamond-slashed-split
+  capital-a: curly-serifless
+  capital-b: standard-interrupted-bilateral-serifed
+  capital-c: serifless
+  capital-d: more-rounded-unilateral-serifed
+  capital-e: serifless
+  capital-f: top-left-serifed
+  capital-g: toothless-corner-serifless-hooked
+  capital-h: serifless
+  capital-i: short-serifed
+  capital-j: serifless
+  capital-k: curly-top-left-serifed
+  # ^ unfortunately identical to capital kappa
+  capital-l: serifless
+  capital-m: hanging-motion-serifed
+  capital-n: standard-serifless
+  capital-p: closed-motion-serifed
+  capital-q: open-swash
+  capital-r: straight-open-serifless
+  capital-s: serifless
+  capital-t: serifless
+  capital-u: toothless-rounded-serifless
+  capital-v: curly-serifless
+  capital-w: curly-serifless
+  capital-x: curly-serifless
+  capital-y: curly-serifless
+  capital-z: straight-serifless-with-crossbar
+  a: double-storey-tailed
+  b: toothless-corner-serifless
+  c: serifless
+  d: tailed-serifless
+  e: rounded
+  f: flat-hook-tailed
+  g: double-storey-open
+  h: straight-serifless
+  i: hooky
+  j: serifless
+  k: curly-serifless
+  l: semi-tailed
+  m: short-leg-serifless
+  n: earless-corner-tailed-serifless
+  p: eared-motion-serifed
+  q: earless-corner-diagonal-tailed-serifless
+  r: corner-hooked-serifless
+  s: serifless
+  t: bent-hook
+  u: toothless-rounded-serifless
+  v: curly-serifless
+  w: cursive-serifless
+  x: curly-serifless
+  y: curly-serifless
+  z: straight-serifless-with-crossbar
+  capital-eszet: flat-top-serifed
+  long-s: flat-hook-tailed
+  eszet: longs-s-lig-tailed-serifless
+  lower-eth: straight-bar
+  capital-thorn: serifed
+  lower-thorn: serifless
+  lower-alpha: crossing
+  lower-beta: standard
+  capital-gamma: bottom-serifed
+  lower-gamma: casual
+  capital-delta: curly
+  lower-delta: rounded
+  lower-eta: earless-rounded-serifed
+  lower-theta: oval
+  lower-iota: tailed-serifed
+  lower-kappa: curly-full-serifed
+  capital-lambda: curly-top-serifed
+  lower-lambda: tailed-turn
+  lower-mu: tailed-serifless
+  lower-nu: casual-serifed
+  lower-xi: flat-top
+  lower-pi: tailed
+  lower-tau: flat-tailed
+  lower-upsilon: casual-serifless
+  lower-phi: cursive
+  lower-chi: semi-chancery-straight-serifless
+  lower-psi: serifless
+  partial-derivative: curly-bar
+  # ^ unfortunately identical to reflected 6
+  cyrl-a: single-storey-earless-corner-tailed
+  cyrl-ve: cursive
+  cyrl-capital-zhe: curly
+  cyrl-zhe: curly
+  cyrl-capital-ze: unilateral-serifed
+  cyrl-ze: unilateral-serifed
+  cyrl-capital-ka: curly-serifless
+  cyrl-ka: curly-serifless
+  cyrl-el: straight
+  cyrl-em: slanted-sides-hanging-serifed
+  cyrl-capital-en: top-left-bottom-right-serifed
+  cyrl-en: tailed-top-left-serifed
+  cyrl-capital-er: open-serifless
+  cyrl-er: earless-rounded-serifless
+  cyrl-capital-u: cursive-flat-hook-serifless
+  cyrl-u: cursive-flat-hook-serifless
+  cyrl-ef: cursive
+  cyrl-che: tailed
+  cyrl-yeri: round
+  cyrl-yery: round
+  cyrl-capital-e: serifless
+  cyrl-e: serifless
+  cyrl-capital-ya: straight-motion-serifed
+  cyrl-ya: straight-tailed-motion-serifed
+  tittle: round
+  diacritic-dot: round
+  punctuation-dot: round
+  braille-dot: round
+  ellipsis-density: normal
+  tilde: low
+  asterisk: turn-hex-high
+  underscore: high
+  caret: high
+  ascii-grave: straight
+  ascii-single-quote: raised-comma
+  paren: normal
+  brace: curly
+  guillemet: curly
+  number-sign: slanted
+  ampersand: flat-top
+  at: fourfold-solid-inner-tall
+  dollar: slanted-interrupted-cap
+  cent: slanted-bar-interrupted-cap
+  percent: rings-segmented-slash
+  bar: natural-slope
+  question: smooth
+  pilcrow: low
+  micro-sign: toothed-serifless
+  decorative-angle-brackets: middle
+  lig-ltgteq: flat
+  lig-neq: slightly-slanted
+  lig-equal-chain: with-notch
+  lig-hyphen-chain: with-notch
+  lig-plus-chain: with-notch
+  lig-double-arrow-bar: with-notch
+  lig-single-arrow-bar: with-notch
