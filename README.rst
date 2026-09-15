@@ -12,6 +12,10 @@ any system.
 
 To run the included scripts, you'll need ``python3-venv``.
 
+Note that there is now an official alternative to this:
+
+https://github.com/be5invis/iosevka-custom-build-demo
+
 .. contents::
    :depth: 1
 
